@@ -591,7 +591,7 @@ namespace HisoutenSupportTools.AddressUpdater.View
                     break;
             }
 
-            new Action(delegate
+            new HisoutenSupportTools.AddressUpdater.Lib.Action(delegate
                 {
                     System.Threading.Thread.Sleep(250);
                     _client.Receive(receiveHostCheckBox.Checked, false, receiveHostCheckBox.Checked && UserConfig.ShowTournaments);
