@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <title>AddressUpdater readme</title>
+</head>
+<body>
+  <div id="root">
+    <div id="root_sub">
+      <div id="header">
+        <div id="title_container">
+          <h1>
+            AddressUpdater</h1>
+          <h2>readme</h2>
+        </div>
+      </div>
+      <div id="main">
+        <div id="menu_container">
+          <div id="submenu">
+            <ol>
+              <li><a href="#A1">初めに</a></li>
+              <li><a href="#A2">全体の動作イメージ</a></li>
+              <li><a href="#A3">ファイル構成</a></li>
+              <li><a href="#A4">設定ファイル</a></li>
+              <li><a href="#A5">ホスト登録準備</a></li>
+              <li><a href="#A6">メイン画面</a></li>
+              <li><a href="#A7">ユーザー設定</a></li>
+              <li><a href="#A8">バージョン情報</a></li>
+              <li><a href="#A9">アンインストール</a></li>
+              <li><a href="#A10">終わりに</a></li>
+            </ol>
+          </div>
+        </div>
+        <div id="contents_container">
+          <div id="contents">
+            <div>
+              <h3 id="A1">
+                1．初めに</h3>
+              <p>
+                このツールではポートの解放等は行いません<br />
+                サーバーを立てる場合は、なるべく事前に接続出来ることを確認しておいてください。<br />
+                ただし、現在は特に接続テストとしての利用を禁止するつもりもありません。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A2">
+                2．全体の動作イメージ</h3>
+              <p>
+                <img width="640" height="512" alt="動作イメージ" title="動作イメージ" src="image.png" />
+              </p>
+              <p>
+                基本的にアドレス・コメントの一覧をWebサービスで預かってるだけです。<br />
+                緋想天のサーバーを立てている人が登録してないと全く意味がありません。<br />
+              </p>
+              <p>
+                なお、預かった情報はすべてメモリ上にのみ保持しているだけで、<br />
+                ファイルやデータベース等には一切出力していません。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A3">
+                3．ファイル構成</h3>
+              <p>
+                <img width="538" height="180" alt="ファイル構成" title="ファイル構成" src="files.png" />
+              </p>
+              <p>
+                テンプレ保存フォルダ、設定ファイル2、実行ファイル1、動作に必要なdll2の計5つと1フォルダ<br />
+                設置場所は、address.txt更新する場合は緋想天インストールフォルダに、しないならどこでもOKです<br />
+                ただしこの4つのファイル（と1フォルダ）だけは同じフォルダに置かなければいけません。<br />
+              </p>
+              <ul>
+                <li>
+                  <div>
+                    <p>
+                      AUTheme<br />
+                      テーマ保存フォルダです。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      CommentTemplates<br />
+                      テンプレ保存フォルダです。文字コードはshift_jisです。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      auservers.txt<br />
+                      接続先サーバーのインポート・エクスポートファイルです。<br />
+                      ユーザー設定タブの中のサーバータブから読み込み・生成することができます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      AddressUpdaterUser.config<br />
+                      ユーザー設定保存ファイルです。<br />
+                      各種ユーザー設定が保存されます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      AddressUpdater.exe<br />
+                      プログラムの実行ファイルです。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      AddressUpdaterLib.dll<br />
+                      プログラムの実行に必要なファイルです。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      AddressUpdaterLib.XmlSerializer.dll<br />
+                      ウィンドウ設定保存用ファイルです。<br />
+                      無くても動きますが、無いと稀にエラーが出るらしいです。
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A4">
+                4．設定ファイル</h3>
+              <p>
+                AddressUpdaterUser.config(ユーザー設定保存ファイル)<br />
+                <img width="633" height="450" alt="ユーザー設定ファイル" title="ユーザー設定ファイル" src="userconfig.png" />
+              </p>
+              <p>
+                各種ユーザー設定を記憶するファイルです。<br />
+                IP・ポート・更新間隔・多重起動の許可/不許可・チャット先頭文字列<br />
+                ランク一覧・サーバー一覧・同時起動ソフト一覧・ウィンドウ位置・おまけ機能の情報が<br />
+                記憶されます。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A5">
+                5．ホストを登録する準備</h3>
+              <p>
+                <img width="717" height="450" alt="ホスト設定" title="ホスト設定" src="host.png" />
+              </p>
+              <ol style="list-style-type: none;">
+                <li>
+                  <div>
+                    <p>
+                      ① Tenco!のレーティング情報使用<br />
+                      Tenco!を利用する場合にチェックを入れます。<br />
+                      ランク入力部分で、キャラを選択できるようになります。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ② 登録するIP<br />
+                      空欄の場合はWebサービス側で自動検出を行います。基本的に変更する必要はありません<br />
+                      入力されていた場合は、入力されたIPで登録を行います。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ③ 使用するポート番号<br />
+                      サーバーへの登録は、記入されたポートが使用中かどうかを検出して行いますので、<br />
+                      ゲームで使用するポートと、このポートは一致させて下さい。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ④ ポート開放<br />
+                      UPnPを使用し、ルーターのポート開放を行います。<br />
+                      UPnPが利用できる状態であれば、ホストを立てる事が出来るようになるかもしれません。<br />
+                      開放に成功した場合はボタンが非表示になります。<br />
+                      この機能を利用した場合、ツールの終了時にポートを閉じます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑤ ランク<br />
+                      ユーザー設定のランクに記述されている一覧の中から選択できます。手入力もできます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑥ テンプレ選択<br />
+                      テンプレ保存フォルダにテキストファイルがある場合、ファイル名の一覧で選択できます。<br />
+                      選択すると、コメント入力欄にテキストファイルの内容がコピーされます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑦ コメント<br />
+                      品位のある言葉でお願いします。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑧ Tenco!保存フォルダ選択<br />
+                      クリックするとフォルダを選択するダイアログが開きます。<br />
+                      選択すると、右欄にフォルダ名が表示されます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑨ 戦績送信<br />
+                      クリックすると、⑧で設定したフォルダにある「hks_report.exe」を実行します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑩ Tenco!マイページ<br />
+                      クリックすると、⑪で設定したアカウント名のマイページをブラウザで開きます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑪ Tenco!アカウント名<br />
+                      Tenco!に登録してあるアカウント名を入力します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑫ Tenco!レート値確認<br />
+                      Tenco!サーバーからレート情報を取得し、⑬のリストに表示します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑬ レート値一覧<br />
+                      Tenco!サーバーから取得したレート値を表示します。
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A6">
+                6．メイン画面</h3>
+              <p>
+                <img width="736" height="330" alt="メイン画面" title="メイン画面" src="main.png" /><br />
+                真ん中の仕切り部分はドラッグして動かせます。
+              </p>
+              <ul style="list-style-type: none;">
+                <li>
+                  <div>
+                    <p>
+                      ① サーバー選択タブ<br />
+                      設定されているサーバーの表示を切り替えられます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ② 一覧の更新<br />
+                      サーバーに登録されてるホスト一覧を取得し始めます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ③ チャット開始<br />
+                      チャットの送受信を開始します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ④ ホスト登録<br />
+                      ホスト設定タブに記述してある内容で、サーバーにホストを登録します。<br />
+                      緋想天で実際に「サーバーを立てる」を行っている間のみ登録されます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑤ ランクフィルタボックス<br />
+                      一覧表示の中から、選んだランクのものだけを抽出して表示します。<br />
+                      address.txtの出力内容にも影響します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑥ address.txt更新選択<br />
+                      address.txtを更新するかどうかを選択します。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑦ チャット最新表示位置選択<br />
+                      チャット表示部分で、新しい発言を下にするか、上にするかを選べます。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑧ ホスト一覧<br />
+                      取得してきた一覧（サーバー立ててる人たちの）を表示します。<br />
+                      行の上でダブルクリックすると、その行のIP：ポートをクリップボードにコピーできます。<br />
+                      対戦中の場合、背景色が変化します。<br />
+                      [右クリックメニュー]<br />
+                      ・クリップボードにコピー<br />
+                      ・このIPのホストを表示しない
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑨ チャット・管理者アナウンス表示欄<br />
+                      チャット・管理者アナウンス内容が表示されます。<br />
+                      チャットの書式は「時間 [ID] : 内容」となっています。<br />
+                      [右クリックメニュー]<br />
+                      ・コピー - 選択中のテキストをクリップボードにコピーします。
+                      ・古いチャットを削除する - 表示をクリアし、サーバーからチャットを再取得します。
+                      ・遮断する - 選択したIDの発言を非表示にします。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑩ チャット入力部<br />
+                      送信する内容を入力します。⑨な発言は控えましょう。
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ⑪ 送信ボタン<br />
+                      入力した内容を送信します。
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                もしaddress.txtを正常に更新している場合<br />
+                <img width="656" height="517" alt="選択するぜ" title="選択するぜ" src="fullscreen.png" /><br />
+                この画像のようにゲーム中で「一覧からサーバーに接続」を選んだ際、<br />
+                一覧の情報からIP:ポート部分、ランク、対戦中/待機中が表示されます。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A7">
+                7．ユーザー設定</h3>
+              <ul>
+                <li>
+                  <div>
+                    <p>
+                      一般<br />
+                      初期入力IP、ポート、更新間隔、多重起動の許可/不許可、チャット先頭文字列、クライアント表示分割方向<br />
+                      ツールの各種表示色を設定します。<br />
+                      <img width="705" height="336" alt="一般" title="一般" src="usersetting_general.png" />
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      ランク<br />
+                      一覧フィルタ用、サーバー登録用のランク一覧を設定します。<br />
+                      <img width="378" height="336" alt="ランク" title="ランク" src="usersetting_rank.png" />
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      チャットフィルター<br />
+                      表示したくない単語を登録しておきます。登録した単語が***に変換されます。<br />
+                      <img width="378" height="336" alt="チャットフィルター" title="チャットフィルター" src="usersetting_chatfilter.png" />
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      同時起動<br />
+                      AddressUpdaterと一緒に起動するソフトを設定します。<br />
+                      exeファイルかショートカットファイル(.lnk)をドラッグアンドドロップできます。<br />
+                      チェックを外すと起動されなくなります。<br />
+                      <img width="378" height="336" alt="同時起動" title="同時起動" src="usersetting_bootsametime.png" />
+                    </p>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <p>
+                      サーバー<br />
+                      サーバー選択ウィンドウに表示するサーバーを設定します。<br />
+                      インポートを行うと、auservers.txtの内容で上書きされます。<br />
+                      エクスポートを行うと、内容をauservers.txtに出力します。<br />
+                      チェックを外すとサーバー選択ウィンドウに表示されなくなります。<br />
+                      ここのサーバー名を編集すると、タブの表示名も変わります。<br />
+                      <img width="607" height="336" alt="サーバー" title="サーバー" src="usersetting_server.png" />
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A8">
+                8．バージョン情報</h3>
+              <p>
+                <img width="633" height="258" alt="バージョン情報" title="バージョン情報" src="version.png" /></p>
+              <p>
+                AddressUpdaterのバージョンが表示されます。<br />
+                新しいバージョンが公開されているか確認：最新バージョンが公開されているかどうかを確認します。</p>
+              <p>
+                作者のサイト1：作者のサイトを既定のブラウザで開きます。<br />
+                作者のサイト2：作者のサイトを既定のブラウザで開きます。DDNSサービス障害用</p>
+              <p>
+                おまけ機能：<br />
+                (デフォルトなら)「東方緋想天 Ver1.06」というウィンドウの位置・サイズを<br />
+                取得したり変更したりします。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A9">
+                9. アンインストール</h3>
+              <p>
+                解凍した時にできたファイルを消すだけです。
+              </p>
+            </div>
+            <hr />
+            <div>
+              <h3 id="A10">
+                10．終わりに</h3>
+              <p>
+                <strong>お約束</strong><br />
+                ツールの質問やツールで展開したファイルの質問を本家にしたりしないでください。<br />
+                東方緋想天の著作権は「黄昏フロンティア」「上海アリス幻樂団」に帰属します。
+              </p>
+              <p>
+                <strong>免責事項</strong><br />
+                このソフトによって起こったいかなる損害にも、開発者は責任を負わないものとします。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <address id="address">
+          bngper@hotmail.co.jp
+        </address>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

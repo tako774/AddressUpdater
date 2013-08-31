@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://hisoutenAddressService/" targetNamespace="http://hisoutenAddressService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addAdminChat" type="tns:addAdminChat" />
+  <xs:element name="addAnnounce" type="tns:addAnnounce" />
+  <xs:element name="addChat" type="tns:addChat" />
+  <xs:element name="addChatEx" type="tns:addChatEx" />
+  <xs:element name="addMatchingHistory" type="tns:addMatchingHistory" />
+  <xs:element name="addTournamentChat" type="tns:addTournamentChat" />
+  <xs:element name="addTournamentDummyPlayer" type="tns:addTournamentDummyPlayer" />
+  <xs:element name="addTournamentManager" type="tns:addTournamentManager" />
+  <xs:element name="addTournamentSpectator" type="tns:addTournamentSpectator" />
+  <xs:element name="cancelTournamentEntry" type="tns:cancelTournamentEntry" />
+  <xs:element name="cancelTournamentEntryByManager" type="tns:cancelTournamentEntryByManager" />
+  <xs:element name="clearAnnounce" type="tns:clearAnnounce" />
+  <xs:element name="clearChat" type="tns:clearChat" />
+  <xs:element name="clearHosts" type="tns:clearHosts" />
+  <xs:element name="clearTournaments" type="tns:clearTournaments" />
+  <xs:element name="clearTournamentsResponse" type="tns:clearTournamentsResponse" />
+  <xs:element name="enter" type="tns:enter" />
+  <xs:element name="enterResponse" type="tns:enterResponse" />
+  <xs:element name="entryTournament" type="tns:entryTournament" />
+  <xs:element name="entryTournamentResponse" type="tns:entryTournamentResponse" />
+  <xs:element name="forceRegisterHost" type="tns:forceRegisterHost" />
+  <xs:element name="forceRegisterHostEx" type="tns:forceRegisterHostEx" />
+  <xs:element name="forceSetFighting" type="tns:forceSetFighting" />
+  <xs:element name="forceUnregisterHost" type="tns:forceUnregisterHost" />
+  <xs:element name="forceUnregisterTournament" type="tns:forceUnregisterTournament" />
+  <xs:element name="getAddressById" type="tns:getAddressById" />
+  <xs:element name="getAddressByIdResponse" type="tns:getAddressByIdResponse" />
+  <xs:element name="getAllData" type="tns:getAllData" />
+  <xs:element name="getAllDataEx" type="tns:getAllDataEx" />
+  <xs:element name="getAllDataExResponse" type="tns:getAllDataExResponse" />
+  <xs:element name="getAllDataResponse" type="tns:getAllDataResponse" />
+  <xs:element name="getMatchingResult" type="tns:getMatchingResult" />
+  <xs:element name="getMatchingResultResponse" type="tns:getMatchingResultResponse" />
+  <xs:element name="getServerSetting" type="tns:getServerSetting" />
+  <xs:element name="getServerSettingResponse" type="tns:getServerSettingResponse" />
+  <xs:element name="getServerSettings" type="tns:getServerSettings" />
+  <xs:element name="getServerSettingsResponse" type="tns:getServerSettingsResponse" />
+  <xs:element name="getServerVersion" type="tns:getServerVersion" />
+  <xs:element name="getServerVersionResponse" type="tns:getServerVersionResponse" />
+  <xs:element name="getTournamentData" type="tns:getTournamentData" />
+  <xs:element name="getTournamentDataResponse" type="tns:getTournamentDataResponse" />
+  <xs:element name="getUserCount" type="tns:getUserCount" />
+  <xs:element name="getUserCountResponse" type="tns:getUserCountResponse" />
+  <xs:element name="guestEntryTournament" type="tns:guestEntryTournament" />
+  <xs:element name="guestEntryTournamentResponse" type="tns:guestEntryTournamentResponse" />
+  <xs:element name="kickTournamentUser" type="tns:kickTournamentUser" />
+  <xs:element name="leave" type="tns:leave" />
+  <xs:element name="registerHost" type="tns:registerHost" />
+  <xs:element name="registerHostEx" type="tns:registerHostEx" />
+  <xs:element name="registerHostExResponse" type="tns:registerHostExResponse" />
+  <xs:element name="registerHostInformation" type="tns:registerHostInformation" />
+  <xs:element name="registerHostResponse" type="tns:registerHostResponse" />
+  <xs:element name="registerMatching" type="tns:registerMatching" />
+  <xs:element name="registerTournament" type="tns:registerTournament" />
+  <xs:element name="removeAnnounce" type="tns:removeAnnounce" />
+  <xs:element name="removeTournamentManager" type="tns:removeTournamentManager" />
+  <xs:element name="removeTournamentSpectator" type="tns:removeTournamentSpectator" />
+  <xs:element name="retireTournament" type="tns:retireTournament" />
+  <xs:element name="retireTournamentByManager" type="tns:retireTournamentByManager" />
+  <xs:element name="setAnnounces" type="tns:setAnnounces" />
+  <xs:element name="setEnableRemoteAdmin" type="tns:setEnableRemoteAdmin" />
+  <xs:element name="setFighting" type="tns:setFighting" />
+  <xs:element name="setPrepared" type="tns:setPrepared" />
+  <xs:element name="setTournamentAnnounces" type="tns:setTournamentAnnounces" />
+  <xs:element name="setTournamentPlayerFighting" type="tns:setTournamentPlayerFighting" />
+  <xs:element name="setTournamentPlayerWaiting" type="tns:setTournamentPlayerWaiting" />
+  <xs:element name="setTournamentResults" type="tns:setTournamentResults" />
+  <xs:element name="setTournamentResultsByManager" type="tns:setTournamentResultsByManager" />
+  <xs:element name="setTournamentUserCount" type="tns:setTournamentUserCount" />
+  <xs:element name="skipMatching" type="tns:skipMatching" />
+  <xs:element name="startTournament" type="tns:startTournament" />
+  <xs:element name="unregisterHost" type="tns:unregisterHost" />
+  <xs:element name="unregisterMatching" type="tns:unregisterMatching" />
+  <xs:element name="unregisterTournament" type="tns:unregisterTournament" />
+  <xs:complexType name="getTournamentData">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="entryName" type="xs:string" />
+      <xs:element minOccurs="0" name="lastDataTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastChatTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTournamentDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:tournament" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tournament">
+    <xs:sequence>
+      <xs:element name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="RegisteredId" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Announces" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Managers" nillable="true" type="tns:manager" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Players" nillable="true" type="tns:player" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Spectators" nillable="true" type="tns:spectator" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Guests" nillable="true" type="tns:guest" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KickedIds" nillable="true" type="tns:id" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chats" nillable="true" type="tns:chat" />
+      <xs:element name="deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastChatUpdate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastDataUpdate" type="xs:dateTime" />
+      <xs:element name="started" type="xs:boolean" />
+      <xs:element name="userCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="id">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="manager">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:tournamentUser">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tournamentUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="entryName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="player">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:tournamentUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchResults" nillable="true" type="xs:int" />
+          <xs:element name="entryNo" type="xs:int" />
+          <xs:element name="fighting" type="xs:boolean" />
+          <xs:element minOccurs="0" name="ip" type="xs:string" />
+          <xs:element name="port" type="xs:int" />
+          <xs:element name="retired" type="xs:boolean" />
+          <xs:element name="waiting" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="spectator">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:tournamentUser">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="guest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:tournamentUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="lastAccessTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="chat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" name="Contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getUserCount">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getUserCountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTournamentEntryByManager">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unregisterMatching">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="unregisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearHosts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retireTournament">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unregisterTournament">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="enter">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="enterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addTournamentManager">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cancelTournamentEntry">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTournamentPlayerWaiting">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element name="waiting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEnableRemoteAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element name="enable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="guestEntryTournament">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="entryName" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="guestEntryTournamentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:id" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addTournamentSpectator">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServerSetting">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerSettingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serverSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serverSetting">
+    <xs:sequence>
+      <xs:element name="chatMaxLength" type="xs:int" />
+      <xs:element name="commentMaxLength" type="xs:int" />
+      <xs:element name="enableAutoMatching" type="xs:boolean" />
+      <xs:element name="enableChat" type="xs:boolean" />
+      <xs:element name="enableChatPrefix" type="xs:boolean" />
+      <xs:element name="enableTournament" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="gameInformations" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hisoutenClassName" type="xs:string" />
+      <xs:element minOccurs="0" name="hisoutenFightingScenes" type="xs:string" />
+      <xs:element minOccurs="0" name="hisoutenSceneIdAddress" type="xs:string" />
+      <xs:element minOccurs="0" name="hisoutenWindowCaption" type="xs:string" />
+      <xs:element name="rankMaxLength" type="xs:int" />
+      <xs:element name="tournamentMaxMinutes" type="xs:int" />
+      <xs:element name="tournamentMaxUsers" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setPrepared">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oponent" type="tns:id" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServerSettings">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerSettingsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="skipMatching">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oponent" type="tns:id" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addMatchingHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="oponent" type="tns:id" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addChatEx">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTournamentUserCount">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element name="userCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="startTournament">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element name="minCount" type="xs:int" />
+      <xs:element name="maxCount" type="xs:int" />
+      <xs:element name="shuffle" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAdminChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllData">
+    <xs:sequence>
+      <xs:element name="getHost" type="xs:boolean" />
+      <xs:element name="getChat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastHostTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastChatTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:allData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="allData">
+    <xs:sequence>
+      <xs:element name="UserCount" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Announces" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hosts" nillable="true" type="tns:host" />
+      <xs:element name="GetHost" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chats" nillable="true" type="tns:chat" />
+      <xs:element name="GetChat" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tournaments" nillable="true" type="tns:tournamentInformation" />
+      <xs:element name="GetTournament" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="host">
+    <xs:sequence>
+      <xs:element name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ip" type="xs:string" />
+      <xs:element name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" type="xs:string" />
+      <xs:element name="IsFighting" type="xs:boolean" />
+      <xs:element name="isDeleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastUpdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tournamentInformation">
+    <xs:sequence>
+      <xs:element name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element name="Type" type="xs:int" />
+      <xs:element name="UserCount" type="xs:int" />
+      <xs:element name="PlayersCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" type="xs:string" />
+      <xs:element name="Started" type="xs:boolean" />
+      <xs:element name="Deleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LastUpdate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="kickTournamentUser">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="targetId" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addTournamentDummyPlayer">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeTournamentSpectator">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceRegisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="port" type="xs:int" />
+      <xs:element minOccurs="0" name="rank" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHostEx">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="host" type="tns:host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHostExResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="registerTournament">
+    <xs:sequence>
+      <xs:element name="userCount" type="xs:int" />
+      <xs:element name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="rank" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addTournamentChat">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTournamentResults">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="results" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="leave">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="setTournamentPlayerFighting">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element name="fighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerMatching">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="tns:tencoUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tencoUser">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:user">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AccountName" type="xs:string" />
+          <xs:element name="IsHostable" type="xs:boolean" />
+          <xs:element name="IsRoomOnly" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Ip" type="xs:string" />
+          <xs:element name="Port" type="xs:int" />
+          <xs:element minOccurs="0" name="Comment" type="xs:string" />
+          <xs:element minOccurs="0" name="Rating" type="tns:tencoRating" />
+          <xs:element name="MatchingSpan" type="xs:int" />
+          <xs:element name="unregistered" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tencoRating">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Character" type="tns:th123Characters" />
+      <xs:element name="Value" type="xs:int" />
+      <xs:element name="Deviation" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="th123Characters">
+    <xs:sequence>
+      <xs:element name="Value" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceUnregisterTournament">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setAnnounces">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="announces" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeTournamentManager">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServerVersion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceSetFighting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="isFighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllDataEx">
+    <xs:sequence>
+      <xs:element name="getHost" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastHostTime" type="xs:dateTime" />
+      <xs:element name="getChat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastChatTime" type="xs:dateTime" />
+      <xs:element name="getTournament" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastTournamentTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllDataExResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:allData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTournamentResultsByManager">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="results" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearTournaments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearTournamentsResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="entryTournament">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="entryName" type="xs:string" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="port" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="entryTournamentResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:id" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMatchingResult">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getMatchingResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:matchingResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matchingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Host" type="tns:tencoUser" />
+      <xs:element minOccurs="0" name="Client" type="tns:tencoUser" />
+      <xs:element name="clientPrepared" type="xs:boolean" />
+      <xs:element name="hostPrepared" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceRegisterHostEx">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" name="host" type="tns:host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setTournamentAnnounces">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="announces" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceUnregisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element name="number" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="retireTournamentByManager">
+    <xs:sequence>
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHostInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="port" type="xs:int" />
+      <xs:element minOccurs="0" name="rank" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="port" type="xs:int" />
+      <xs:element minOccurs="0" name="rank" type="xs:string" />
+      <xs:element minOccurs="0" name="comment" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHostResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setFighting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="isFighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="keyword" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

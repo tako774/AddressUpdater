@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://addressService.bngper/" targetNamespace="http://addressService.bngper/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="addAdminChat" type="tns:addAdminChat" />
+  <xs:element name="addAdminChatResponse" type="tns:addAdminChatResponse" />
+  <xs:element name="addAnnounce" type="tns:addAnnounce" />
+  <xs:element name="addAnnounceResponse" type="tns:addAnnounceResponse" />
+  <xs:element name="addChat" type="tns:addChat" />
+  <xs:element name="addChatResponse" type="tns:addChatResponse" />
+  <xs:element name="clearAnnounce" type="tns:clearAnnounce" />
+  <xs:element name="clearAnnounceResponse" type="tns:clearAnnounceResponse" />
+  <xs:element name="clearChat" type="tns:clearChat" />
+  <xs:element name="clearChatResponse" type="tns:clearChatResponse" />
+  <xs:element name="clearHosts" type="tns:clearHosts" />
+  <xs:element name="clearHostsResponse" type="tns:clearHostsResponse" />
+  <xs:element name="enter" type="tns:enter" />
+  <xs:element name="enterResponse" type="tns:enterResponse" />
+  <xs:element name="forceRegisterHost" type="tns:forceRegisterHost" />
+  <xs:element name="forceRegisterHostResponse" type="tns:forceRegisterHostResponse" />
+  <xs:element name="forceSetFighting" type="tns:forceSetFighting" />
+  <xs:element name="forceSetFightingResponse" type="tns:forceSetFightingResponse" />
+  <xs:element name="forceUnregisterHost" type="tns:forceUnregisterHost" />
+  <xs:element name="forceUnregisterHostResponse" type="tns:forceUnregisterHostResponse" />
+  <xs:element name="getAddressById" type="tns:getAddressById" />
+  <xs:element name="getAddressByIdResponse" type="tns:getAddressByIdResponse" />
+  <xs:element name="getAllData" type="tns:getAllData" />
+  <xs:element name="getAllDataResponse" type="tns:getAllDataResponse" />
+  <xs:element name="getServerSetting" type="tns:getServerSetting" />
+  <xs:element name="getServerSettingResponse" type="tns:getServerSettingResponse" />
+  <xs:element name="getServerVersion" type="tns:getServerVersion" />
+  <xs:element name="getServerVersionResponse" type="tns:getServerVersionResponse" />
+  <xs:element name="getUserCount" type="tns:getUserCount" />
+  <xs:element name="getUserCountResponse" type="tns:getUserCountResponse" />
+  <xs:element name="leave" type="tns:leave" />
+  <xs:element name="leaveResponse" type="tns:leaveResponse" />
+  <xs:element name="registerHost" type="tns:registerHost" />
+  <xs:element name="registerHostResponse" type="tns:registerHostResponse" />
+  <xs:element name="removeAnnounce" type="tns:removeAnnounce" />
+  <xs:element name="removeAnnounceResponse" type="tns:removeAnnounceResponse" />
+  <xs:element name="setEnableRemoteAdmin" type="tns:setEnableRemoteAdmin" />
+  <xs:element name="setEnableRemoteAdminResponse" type="tns:setEnableRemoteAdminResponse" />
+  <xs:element name="setFighting" type="tns:setFighting" />
+  <xs:element name="setFightingResponse" type="tns:setFightingResponse" />
+  <xs:element name="unregisterHost" type="tns:unregisterHost" />
+  <xs:element name="unregisterHostResponse" type="tns:unregisterHostResponse" />
+  <xs:complexType name="getUserCount">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getUserCountResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="leave">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="leaveResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getAllData">
+    <xs:sequence>
+      <xs:element name="getHost" type="xs:boolean" />
+      <xs:element name="getChat" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lastHostTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lastChatTime" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAllDataResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:allData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="allData">
+    <xs:sequence>
+      <xs:element name="UserCount" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Announces" nillable="true" type="tns:announce" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Hosts" nillable="true" type="tns:host" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Chats" nillable="true" type="tns:chat" />
+      <xs:element name="GetHost" type="xs:boolean" />
+      <xs:element name="GetChat" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="announce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" type="xs:string" />
+      <xs:element minOccurs="0" name="Contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="host">
+    <xs:sequence>
+      <xs:element name="No" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Ip" type="xs:string" />
+      <xs:element name="Port" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" type="xs:string" />
+      <xs:element name="fighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="id">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="chat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="tns:id" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" name="Color" type="xs:string" />
+      <xs:element minOccurs="0" name="Contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEnableRemoteAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="enable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setEnableRemoteAdminResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="announce" type="tns:announce" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAnnounceResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addAdminChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="color" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addAdminChatResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="clearHosts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearHostsResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="forceSetFighting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="fighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceSetFightingResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerVersion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerVersionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getServerSetting">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getServerSettingResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:serverSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serverSetting">
+    <xs:sequence>
+      <xs:element name="RankMaxLength" type="xs:int" />
+      <xs:element name="CommentMaxLength" type="xs:int" />
+      <xs:element name="ChatMaxLength" type="xs:int" />
+      <xs:element name="EnableChat" type="xs:boolean" />
+      <xs:element name="EnableChatPrefix" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExtraSettings" nillable="true" type="tns:extraSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="extraSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unregisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="unregisterHostResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="clearAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearAnnounceResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="forceUnregisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceUnregisterHostResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="forceRegisterHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="host" type="tns:host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="forceRegisterHostResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="clearChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clearChatResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="getAddressById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getAddressByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setFighting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ip" type="xs:string" />
+      <xs:element name="fighting" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="setFightingResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="addChat">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+      <xs:element minOccurs="0" name="color" type="xs:string" />
+      <xs:element minOccurs="0" name="contents" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="addChatResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="registerHost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="host" type="tns:host" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registerHostResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="enter">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="enterResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="removeAnnounce">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element name="no" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="removeAnnounceResponse">
+    <xs:sequence />
+  </xs:complexType>
+</xs:schema>

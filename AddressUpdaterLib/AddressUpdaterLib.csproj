@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00288095-ECC5-482F-97A5-663DDB08F329}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HisoutenSupportTools.AddressUpdater.Lib</RootNamespace>
+    <AssemblyName>AddressUpdaterLib</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\AddressUpdaterLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\AddressUpdaterLib.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\AdjustWindowRectFailedException.cs" />
+    <Compile Include="Api\GetWindowRectFailedException.cs" />
+    <Compile Include="Api\HWND.cs" />
+    <Compile Include="Api\Kernel32.cs" />
+    <Compile Include="Api\RECT.cs" />
+    <Compile Include="Api\SWP.cs" />
+    <Compile Include="Api\User32.cs" />
+    <Compile Include="Api\Win32Window.cs" />
+    <Compile Include="Api\WindowNotFoundException.cs" />
+    <Compile Include="Api\WindowStyles.cs" />
+    <Compile Include="Controller\AdminClient.cs" />
+    <Compile Include="Controller\Client.cs" />
+    <Compile Include="Controller\ReceiveManager.cs" />
+    <Compile Include="Model\host.Extension.cs" />
+    <Compile Include="Network\IServer.cs" />
+    <Compile Include="Network\Server.cs" />
+    <Compile Include="Network\CommunicationFailedException.cs" />
+    <Compile Include="Controller\IClient.cs" />
+    <Compile Include="Network\Upnp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Network\Upnp.Designer.cs">
+      <DependentUpon>Upnp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="View\ColorChangeToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\ColorChangeToggle.Designer.cs">
+      <DependentUpon>ColorChangeToggle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TextChangeToggle.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\TextChangeToggle.Designer.cs">
+      <DependentUpon>TextChangeToggle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Watcher\Th105Watcher.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Watcher\Th105Watcher.Designer.cs">
+      <DependentUpon>Th105Watcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Watcher\IWatcher.cs" />
+    <Compile Include="Web References\AddressService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\VersionCheckService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Compile Include="Api\ReadProcessMemoryFailedException.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="Model\AutoMatching\matchingResult.cs" />
+    <Compile Include="Model\AutoMatching\tencoRating.cs" />
+    <Compile Include="Model\AutoMatching\tencoUser.cs" />
+    <Compile Include="Model\AutoMatching\th123Characters.cs" />
+    <Compile Include="Model\Config\AutoMatchingInformation.cs" />
+    <Compile Include="Model\Config\NullColorData.cs" />
+    <Compile Include="Model\Config\ExtraWindowInformation.cs" />
+    <Compile Include="Tenco\Games.cs" />
+    <Compile Include="Tenco\SwrAddr.cs" />
+    <Compile Include="Controller\HostController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controller\HostController.Designer.cs">
+      <DependentUpon>HostController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Tournament\TournamentInformation.cs" />
+    <Compile Include="Controller\Tournament\TournamentReceiveManager.cs" />
+    <Compile Include="Controller\Tournament\UsersChangedEventArgs.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="IO\AddressTxtUpdater.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IO\AddressTxtUpdater.Designer.cs">
+      <DependentUpon>AddressTxtUpdater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\FileLoader.cs" />
+    <Compile Include="IO\ServerListLoader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IO\ServerListLoader.Designer.cs">
+      <DependentUpon>ServerListLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\ThemeLoader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IO\ThemeLoader.Designer.cs">
+      <DependentUpon>ThemeLoader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IO\XmlConfigFile.cs" />
+    <Compile Include="Model\AddressUpdaterDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AddressUpdaterDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\chat.Extension.cs" />
+    <Compile Include="Model\Config\ColorData.cs" />
+    <Compile Include="Model\Config\FontName.cs" />
+    <Compile Include="Model\Config\ServerInformation.cs" />
+    <Compile Include="Model\Config\SoftwareInformation.cs" />
+    <Compile Include="Model\Config\Theme.cs" />
+    <Compile Include="Model\Config\UserConfig.cs" />
+    <Compile Include="Model\Config\WindowConfig.cs" />
+    <Compile Include="AddressUpdaterUri.cs" />
+    <Compile Include="Model\GameInformation.cs" />
+    <Compile Include="Model\id.Extention.cs" />
+    <Compile Include="Model\player.Extention.cs" />
+    <Compile Include="Model\Tournament\spectator.Extention.cs" />
+    <Compile Include="Model\Tournament\tournamentInformation.Extention.cs" />
+    <Compile Include="Model\Tournament\tournamentUser.Extention.cs" />
+    <Compile Include="Model\manager.Extention.cs" />
+    <Compile Include="Model\guest.Extention.cs" />
+    <Compile Include="Model\MatchResults.cs" />
+    <Compile Include="Model\Tournament\TournamentTypes.cs" />
+    <Compile Include="Network\UdpPort.cs" />
+    <Compile Include="Network\TcpPort.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Tenco\Th123Characters.cs" />
+    <Compile Include="Tenco\SwrsAddr.cs" />
+    <Compile Include="Tenco\Th123Rating.cs" />
+    <Compile Include="Tenco\Th123TencoClient.cs" />
+    <Compile Include="Util\ArrayExtention.cs" />
+    <Compile Include="Util\ObservableCollection.cs" />
+    <Compile Include="Tenco\Th105Characters.cs" />
+    <Compile Include="Tenco\Th105Rating.cs" />
+    <Compile Include="Tenco\Th105TencoClient.cs" />
+    <Compile Include="ViewModel\AutoMatching\AutoMatchingViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\AutoMatching\AutoMatchingViewModel.Designer.cs">
+      <DependentUpon>AutoMatchingViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ChatViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ChatViewModel.Designer.cs">
+      <DependentUpon>ChatViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ExtraViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ExtraViewModel.Designer.cs">
+      <DependentUpon>ExtraViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\HostListViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\HostListViewModel.Designer.cs">
+      <DependentUpon>HostListViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\HostSettingViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\HostSettingViewModel.Designer.cs">
+      <DependentUpon>HostSettingViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MatchingPhase.cs" />
+    <Compile Include="ViewModel\TskStatus.cs" />
+    <Compile Include="ViewModel\VersionViewModel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\VersionViewModel.Designer.cs">
+      <DependentUpon>VersionViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelBase.Designer.cs">
+      <DependentUpon>ViewModelBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddInterceptDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddInterceptDialog.Designer.cs">
+      <DependentUpon>AddInterceptDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\ChatFilter.cs" />
+    <Compile Include="View\AutoMatching\AutoMatchingView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AutoMatching\AutoMatchingView.Designer.cs">
+      <DependentUpon>AutoMatchingView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutoMatching\AutoMatchingViewHorizontal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AutoMatching\AutoMatchingViewHorizontal.Designer.cs">
+      <DependentUpon>AutoMatchingViewHorizontal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AutoMatching\AutoMatchingViewVertical.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\AutoMatching\AutoMatchingViewVertical.Designer.cs">
+      <DependentUpon>AutoMatchingViewVertical.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChatView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ChatView.Designer.cs">
+      <DependentUpon>ChatView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AnnounceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AnnounceWindow.Designer.cs">
+      <DependentUpon>AnnounceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CommandButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\CommandButton.Designer.cs">
+      <DependentUpon>CommandButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExtraView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\ExtraView.Designer.cs">
+      <DependentUpon>ExtraView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tournament\ControlInformation.cs" />
+    <Compile Include="View\Tournament\EntryTournamentDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tournament\EntryTournamentDialog.Designer.cs">
+      <DependentUpon>EntryTournamentDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HostFilter.cs" />
+    <Compile Include="View\HostListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\HostListView.Designer.cs">
+      <DependentUpon>HostListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\HostSettingTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\HostSettingTab.Designer.cs">
+      <DependentUpon>HostSettingTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tournament\MatchStatusViewer.cs" />
+    <Compile Include="Model\RegisterMode.cs" />
+    <Compile Include="View\TabBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\TabBase.Designer.cs">
+      <DependentUpon>TabBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tournament\PlayerLinkLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\Tournament\RoundRobinViewer.cs" />
+    <Compile Include="View\Tournament\ResultEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Tournament\ResultEditor.Designer.cs">
+      <DependentUpon>ResultEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Tournament\Team.cs" />
+    <Compile Include="View\Tournament\TeamMatchResultViewer.cs" />
+    <Compile Include="View\Tournament\TeamRoundRobinViewer.cs" />
+    <Compile Include="View\Tournament\TeamTournamentViewer.cs" />
+    <Compile Include="View\Tournament\TournamentViewer.cs" />
+    <Compile Include="Model\Tournament\TournamentRoles.cs" />
+    <Compile Include="View\Tournament\TournamentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Tournament\TournamentWindow.Designer.cs">
+      <DependentUpon>TournamentWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TrayIconAdapter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\TrayIconAdapter.Designer.cs">
+      <DependentUpon>TrayIconAdapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\ChatFilterTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\ChatFilterTab.Designer.cs">
+      <DependentUpon>ChatFilterTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\GeneralTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\GeneralTab.Designer.cs">
+      <DependentUpon>GeneralTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\HighlightKeywordsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\HighlightKeywordsTab.Designer.cs">
+      <DependentUpon>HighlightKeywordsTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\RankTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\RankTab.Designer.cs">
+      <DependentUpon>RankTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\SameTimeBootTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\SameTimeBootTab.Designer.cs">
+      <DependentUpon>SameTimeBootTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserConfigView\ServerTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\UserConfigView\ServerTab.Designer.cs">
+      <DependentUpon>ServerTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VersionTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\VersionTab.Designer.cs">
+      <DependentUpon>VersionTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Watcher\MultiWatcher.cs" />
+    <Compile Include="Watcher\Th105Scenes.cs" />
+    <None Include="Model\AddressUpdaterDataSet.xsc">
+      <DependentUpon>AddressUpdaterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Model\AddressUpdaterDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AddressUpdaterDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\AddressUpdaterDataSet.xss">
+      <DependentUpon>AddressUpdaterDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AddressService\AddressService.wsdl" />
+    <None Include="Web References\AddressService\AddressService.xsd" />
+    <None Include="Web References\AddressService\allData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AddressService\id.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AddressService\matchingResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AddressService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\AddressService\serverSetting.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\AddressService\tournament.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\VersionCheckService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\VersionCheckService\VersionCheckService.wsdl" />
+    <None Include="Web References\VersionCheckService\VersionCheckService.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controller\HostController.resx">
+      <DependentUpon>HostController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewModel\HostSettingViewModel.resx">
+      <DependentUpon>HostSettingViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddInterceptDialog.resx">
+      <DependentUpon>AddInterceptDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AutoMatching\AutoMatchingView.resx">
+      <DependentUpon>AutoMatchingView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AutoMatching\AutoMatchingViewHorizontal.resx">
+      <DependentUpon>AutoMatchingViewHorizontal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AutoMatching\AutoMatchingViewVertical.resx">
+      <DependentUpon>AutoMatchingViewVertical.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChatView.resx">
+      <DependentUpon>ChatView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AnnounceWindow.resx">
+      <DependentUpon>AnnounceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ExtraView.resx">
+      <DependentUpon>ExtraView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tournament\EntryTournamentDialog.resx">
+      <DependentUpon>EntryTournamentDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HostListView.resx">
+      <DependentUpon>HostListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\HostSettingTab.resx">
+      <DependentUpon>HostSettingTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TabBase.resx">
+      <DependentUpon>TabBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tournament\ResultEditor.resx">
+      <DependentUpon>ResultEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Tournament\TournamentWindow.resx">
+      <DependentUpon>TournamentWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\ChatFilterTab.resx">
+      <DependentUpon>ChatFilterTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\GeneralTab.resx">
+      <DependentUpon>GeneralTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\HighlightKeywordsTab.resx">
+      <DependentUpon>HighlightKeywordsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\RankTab.resx">
+      <DependentUpon>RankTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\SameTimeBootTab.resx">
+      <DependentUpon>SameTimeBootTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\UserConfigView\ServerTab.resx">
+      <DependentUpon>ServerTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VersionTab.resx">
+      <DependentUpon>VersionTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Watcher\Th105Watcher.resx">
+      <DependentUpon>Th105Watcher.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.bngper.mydns.jp/HisoutenAddressServiceVersionCheck/VersionCheckService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\VersionCheckService\</RelPath>
+      <UpdateFromURL>http://www.bngper.mydns.jp/HisoutenAddressServiceVersionCheck/VersionCheckService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AddressUpdaterLib_VersionCheckService_VersionCheckService</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8080/HisoutenAddressService/AddressService%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AddressService\</RelPath>
+      <UpdateFromURL>http://localhost:8080/HisoutenAddressService/AddressService%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>AddressUpdaterLib_AddressService_AddressService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <Content Include="icon16.png" />
+    <Content Include="icon32.png" />
+    <Content Include="icon48.png" />
+    <Content Include="icon64.png" />
+    <Content Include="language.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

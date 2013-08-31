@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://addressService.bngper/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AddressService" targetNamespace="http://addressService.bngper/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/services/AddressService?xsd=1" namespace="http://addressService.bngper/" />
+    </xsd:schema>
+  </types>
+  <message name="registerHost">
+    <part name="parameters" element="tns:registerHost" />
+  </message>
+  <message name="registerHostResponse">
+    <part name="parameters" element="tns:registerHostResponse" />
+  </message>
+  <message name="unregisterHost">
+    <part name="parameters" element="tns:unregisterHost" />
+  </message>
+  <message name="unregisterHostResponse">
+    <part name="parameters" element="tns:unregisterHostResponse" />
+  </message>
+  <message name="getServerVersion">
+    <part name="parameters" element="tns:getServerVersion" />
+  </message>
+  <message name="getServerVersionResponse">
+    <part name="parameters" element="tns:getServerVersionResponse" />
+  </message>
+  <message name="getServerSetting">
+    <part name="parameters" element="tns:getServerSetting" />
+  </message>
+  <message name="getServerSettingResponse">
+    <part name="parameters" element="tns:getServerSettingResponse" />
+  </message>
+  <message name="clearHosts">
+    <part name="parameters" element="tns:clearHosts" />
+  </message>
+  <message name="clearHostsResponse">
+    <part name="parameters" element="tns:clearHostsResponse" />
+  </message>
+  <message name="clearChat">
+    <part name="parameters" element="tns:clearChat" />
+  </message>
+  <message name="clearChatResponse">
+    <part name="parameters" element="tns:clearChatResponse" />
+  </message>
+  <message name="addAnnounce">
+    <part name="parameters" element="tns:addAnnounce" />
+  </message>
+  <message name="addAnnounceResponse">
+    <part name="parameters" element="tns:addAnnounceResponse" />
+  </message>
+  <message name="removeAnnounce">
+    <part name="parameters" element="tns:removeAnnounce" />
+  </message>
+  <message name="removeAnnounceResponse">
+    <part name="parameters" element="tns:removeAnnounceResponse" />
+  </message>
+  <message name="clearAnnounce">
+    <part name="parameters" element="tns:clearAnnounce" />
+  </message>
+  <message name="clearAnnounceResponse">
+    <part name="parameters" element="tns:clearAnnounceResponse" />
+  </message>
+  <message name="forceRegisterHost">
+    <part name="parameters" element="tns:forceRegisterHost" />
+  </message>
+  <message name="forceRegisterHostResponse">
+    <part name="parameters" element="tns:forceRegisterHostResponse" />
+  </message>
+  <message name="forceUnregisterHost">
+    <part name="parameters" element="tns:forceUnregisterHost" />
+  </message>
+  <message name="forceUnregisterHostResponse">
+    <part name="parameters" element="tns:forceUnregisterHostResponse" />
+  </message>
+  <message name="forceSetFighting">
+    <part name="parameters" element="tns:forceSetFighting" />
+  </message>
+  <message name="forceSetFightingResponse">
+    <part name="parameters" element="tns:forceSetFightingResponse" />
+  </message>
+  <message name="addAdminChat">
+    <part name="parameters" element="tns:addAdminChat" />
+  </message>
+  <message name="addAdminChatResponse">
+    <part name="parameters" element="tns:addAdminChatResponse" />
+  </message>
+  <message name="getAddressById">
+    <part name="parameters" element="tns:getAddressById" />
+  </message>
+  <message name="getAddressByIdResponse">
+    <part name="parameters" element="tns:getAddressByIdResponse" />
+  </message>
+  <message name="setEnableRemoteAdmin">
+    <part name="parameters" element="tns:setEnableRemoteAdmin" />
+  </message>
+  <message name="setEnableRemoteAdminResponse">
+    <part name="parameters" element="tns:setEnableRemoteAdminResponse" />
+  </message>
+  <message name="getUserCount">
+    <part name="parameters" element="tns:getUserCount" />
+  </message>
+  <message name="getUserCountResponse">
+    <part name="parameters" element="tns:getUserCountResponse" />
+  </message>
+  <message name="enter">
+    <part name="parameters" element="tns:enter" />
+  </message>
+  <message name="enterResponse">
+    <part name="parameters" element="tns:enterResponse" />
+  </message>
+  <message name="setFighting">
+    <part name="parameters" element="tns:setFighting" />
+  </message>
+  <message name="setFightingResponse">
+    <part name="parameters" element="tns:setFightingResponse" />
+  </message>
+  <message name="addChat">
+    <part name="parameters" element="tns:addChat" />
+  </message>
+  <message name="addChatResponse">
+    <part name="parameters" element="tns:addChatResponse" />
+  </message>
+  <message name="getAllData">
+    <part name="parameters" element="tns:getAllData" />
+  </message>
+  <message name="getAllDataResponse">
+    <part name="parameters" element="tns:getAllDataResponse" />
+  </message>
+  <message name="leave">
+    <part name="parameters" element="tns:leave" />
+  </message>
+  <message name="leaveResponse">
+    <part name="parameters" element="tns:leaveResponse" />
+  </message>
+  <portType name="AddressService">
+    <operation name="registerHost">
+      <input message="tns:registerHost" />
+      <output message="tns:registerHostResponse" />
+    </operation>
+    <operation name="unregisterHost">
+      <input message="tns:unregisterHost" />
+      <output message="tns:unregisterHostResponse" />
+    </operation>
+    <operation name="getServerVersion">
+      <input message="tns:getServerVersion" />
+      <output message="tns:getServerVersionResponse" />
+    </operation>
+    <operation name="getServerSetting">
+      <input message="tns:getServerSetting" />
+      <output message="tns:getServerSettingResponse" />
+    </operation>
+    <operation name="clearHosts">
+      <input message="tns:clearHosts" />
+      <output message="tns:clearHostsResponse" />
+    </operation>
+    <operation name="clearChat">
+      <input message="tns:clearChat" />
+      <output message="tns:clearChatResponse" />
+    </operation>
+    <operation name="addAnnounce">
+      <input message="tns:addAnnounce" />
+      <output message="tns:addAnnounceResponse" />
+    </operation>
+    <operation name="removeAnnounce">
+      <input message="tns:removeAnnounce" />
+      <output message="tns:removeAnnounceResponse" />
+    </operation>
+    <operation name="clearAnnounce">
+      <input message="tns:clearAnnounce" />
+      <output message="tns:clearAnnounceResponse" />
+    </operation>
+    <operation name="forceRegisterHost">
+      <input message="tns:forceRegisterHost" />
+      <output message="tns:forceRegisterHostResponse" />
+    </operation>
+    <operation name="forceUnregisterHost">
+      <input message="tns:forceUnregisterHost" />
+      <output message="tns:forceUnregisterHostResponse" />
+    </operation>
+    <operation name="forceSetFighting">
+      <input message="tns:forceSetFighting" />
+      <output message="tns:forceSetFightingResponse" />
+    </operation>
+    <operation name="addAdminChat">
+      <input message="tns:addAdminChat" />
+      <output message="tns:addAdminChatResponse" />
+    </operation>
+    <operation name="getAddressById">
+      <input message="tns:getAddressById" />
+      <output message="tns:getAddressByIdResponse" />
+    </operation>
+    <operation name="setEnableRemoteAdmin">
+      <input message="tns:setEnableRemoteAdmin" />
+      <output message="tns:setEnableRemoteAdminResponse" />
+    </operation>
+    <operation name="getUserCount">
+      <input message="tns:getUserCount" />
+      <output message="tns:getUserCountResponse" />
+    </operation>
+    <operation name="enter">
+      <input message="tns:enter" />
+      <output message="tns:enterResponse" />
+    </operation>
+    <operation name="setFighting">
+      <input message="tns:setFighting" />
+      <output message="tns:setFightingResponse" />
+    </operation>
+    <operation name="addChat">
+      <input message="tns:addChat" />
+      <output message="tns:addChatResponse" />
+    </operation>
+    <operation name="getAllData">
+      <input message="tns:getAllData" />
+      <output message="tns:getAllDataResponse" />
+    </operation>
+    <operation name="leave">
+      <input message="tns:leave" />
+      <output message="tns:leaveResponse" />
+    </operation>
+  </portType>
+  <binding name="AddressServicePortBinding" type="tns:AddressService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="registerHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="unregisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServerVersion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServerSetting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="clearHosts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="clearChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="removeAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="clearAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="forceRegisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="forceUnregisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="forceSetFighting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addAdminChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAddressById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setEnableRemoteAdmin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getUserCount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="enter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setFighting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="addChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="leave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AddressService">
+    <port name="AddressServicePort" binding="tns:AddressServicePortBinding">
+      <soap:address location="http://localhost:8084/services/AddressService" />
+    </port>
+  </service>
+</definitions>

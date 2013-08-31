@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://hisoutenAddressService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="VersionCheckService" targetNamespace="http://hisoutenAddressService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://www.bngper.mydns.jp:80/HisoutenAddressServiceVersionCheck/VersionCheckService?xsd=1" namespace="http://hisoutenAddressService/" />
+    </xsd:schema>
+  </types>
+  <message name="getClientVersion">
+    <part name="parameters" element="tns:getClientVersion" />
+  </message>
+  <message name="getClientVersionResponse">
+    <part name="parameters" element="tns:getClientVersionResponse" />
+  </message>
+  <portType name="VersionCheckService">
+    <operation name="getClientVersion">
+      <input message="tns:getClientVersion" />
+      <output message="tns:getClientVersionResponse" />
+    </operation>
+  </portType>
+  <binding name="VersionCheckServicePortBinding" type="tns:VersionCheckService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="getClientVersion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="VersionCheckService">
+    <port name="VersionCheckServicePort" binding="tns:VersionCheckServicePortBinding">
+      <soap:address location="http://www.bngper.mydns.jp:80/HisoutenAddressServiceVersionCheck/VersionCheckService" />
+    </port>
+  </service>
+</definitions>

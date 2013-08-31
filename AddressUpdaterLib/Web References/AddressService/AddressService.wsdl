@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="http://hisoutenAddressService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="AddressService" targetNamespace="http://hisoutenAddressService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/HisoutenAddressService/AddressService?xsd=1" namespace="http://hisoutenAddressService/" />
+    </xsd:schema>
+  </types>
+  <message name="registerHost">
+    <part name="parameters" element="tns:registerHost" />
+  </message>
+  <message name="registerHostResponse">
+    <part name="parameters" element="tns:registerHostResponse" />
+  </message>
+  <message name="unregisterHost">
+    <part name="parameters" element="tns:unregisterHost" />
+  </message>
+  <message name="getServerVersion">
+    <part name="parameters" element="tns:getServerVersion" />
+  </message>
+  <message name="getServerVersionResponse">
+    <part name="parameters" element="tns:getServerVersionResponse" />
+  </message>
+  <message name="getServerSetting">
+    <part name="parameters" element="tns:getServerSetting" />
+  </message>
+  <message name="getServerSettingResponse">
+    <part name="parameters" element="tns:getServerSettingResponse" />
+  </message>
+  <message name="getServerSettings">
+    <part name="parameters" element="tns:getServerSettings" />
+  </message>
+  <message name="getServerSettingsResponse">
+    <part name="parameters" element="tns:getServerSettingsResponse" />
+  </message>
+  <message name="clearHosts">
+    <part name="parameters" element="tns:clearHosts" />
+  </message>
+  <message name="clearTournaments">
+    <part name="parameters" element="tns:clearTournaments" />
+  </message>
+  <message name="clearTournamentsResponse">
+    <part name="parameters" element="tns:clearTournamentsResponse" />
+  </message>
+  <message name="clearChat">
+    <part name="parameters" element="tns:clearChat" />
+  </message>
+  <message name="setAnnounces">
+    <part name="parameters" element="tns:setAnnounces" />
+  </message>
+  <message name="addAnnounce">
+    <part name="parameters" element="tns:addAnnounce" />
+  </message>
+  <message name="removeAnnounce">
+    <part name="parameters" element="tns:removeAnnounce" />
+  </message>
+  <message name="clearAnnounce">
+    <part name="parameters" element="tns:clearAnnounce" />
+  </message>
+  <message name="forceRegisterHost">
+    <part name="parameters" element="tns:forceRegisterHost" />
+  </message>
+  <message name="forceRegisterHostEx">
+    <part name="parameters" element="tns:forceRegisterHostEx" />
+  </message>
+  <message name="forceUnregisterHost">
+    <part name="parameters" element="tns:forceUnregisterHost" />
+  </message>
+  <message name="forceUnregisterTournament">
+    <part name="parameters" element="tns:forceUnregisterTournament" />
+  </message>
+  <message name="forceSetFighting">
+    <part name="parameters" element="tns:forceSetFighting" />
+  </message>
+  <message name="addAdminChat">
+    <part name="parameters" element="tns:addAdminChat" />
+  </message>
+  <message name="getAddressById">
+    <part name="parameters" element="tns:getAddressById" />
+  </message>
+  <message name="getAddressByIdResponse">
+    <part name="parameters" element="tns:getAddressByIdResponse" />
+  </message>
+  <message name="setEnableRemoteAdmin">
+    <part name="parameters" element="tns:setEnableRemoteAdmin" />
+  </message>
+  <message name="getUserCount">
+    <part name="parameters" element="tns:getUserCount" />
+  </message>
+  <message name="getUserCountResponse">
+    <part name="parameters" element="tns:getUserCountResponse" />
+  </message>
+  <message name="enter">
+    <part name="parameters" element="tns:enter" />
+  </message>
+  <message name="enterResponse">
+    <part name="parameters" element="tns:enterResponse" />
+  </message>
+  <message name="registerHostInformation">
+    <part name="parameters" element="tns:registerHostInformation" />
+  </message>
+  <message name="registerHostEx">
+    <part name="parameters" element="tns:registerHostEx" />
+  </message>
+  <message name="registerHostExResponse">
+    <part name="parameters" element="tns:registerHostExResponse" />
+  </message>
+  <message name="setFighting">
+    <part name="parameters" element="tns:setFighting" />
+  </message>
+  <message name="addChat">
+    <part name="parameters" element="tns:addChat" />
+  </message>
+  <message name="addChatEx">
+    <part name="parameters" element="tns:addChatEx" />
+  </message>
+  <message name="getTournamentData">
+    <part name="parameters" element="tns:getTournamentData" />
+  </message>
+  <message name="getTournamentDataResponse">
+    <part name="parameters" element="tns:getTournamentDataResponse" />
+  </message>
+  <message name="registerTournament">
+    <part name="parameters" element="tns:registerTournament" />
+  </message>
+  <message name="unregisterTournament">
+    <part name="parameters" element="tns:unregisterTournament" />
+  </message>
+  <message name="addTournamentManager">
+    <part name="parameters" element="tns:addTournamentManager" />
+  </message>
+  <message name="removeTournamentManager">
+    <part name="parameters" element="tns:removeTournamentManager" />
+  </message>
+  <message name="addTournamentDummyPlayer">
+    <part name="parameters" element="tns:addTournamentDummyPlayer" />
+  </message>
+  <message name="cancelTournamentEntryByManager">
+    <part name="parameters" element="tns:cancelTournamentEntryByManager" />
+  </message>
+  <message name="addTournamentSpectator">
+    <part name="parameters" element="tns:addTournamentSpectator" />
+  </message>
+  <message name="removeTournamentSpectator">
+    <part name="parameters" element="tns:removeTournamentSpectator" />
+  </message>
+  <message name="setTournamentAnnounces">
+    <part name="parameters" element="tns:setTournamentAnnounces" />
+  </message>
+  <message name="setTournamentUserCount">
+    <part name="parameters" element="tns:setTournamentUserCount" />
+  </message>
+  <message name="startTournament">
+    <part name="parameters" element="tns:startTournament" />
+  </message>
+  <message name="retireTournamentByManager">
+    <part name="parameters" element="tns:retireTournamentByManager" />
+  </message>
+  <message name="kickTournamentUser">
+    <part name="parameters" element="tns:kickTournamentUser" />
+  </message>
+  <message name="setTournamentResultsByManager">
+    <part name="parameters" element="tns:setTournamentResultsByManager" />
+  </message>
+  <message name="entryTournament">
+    <part name="parameters" element="tns:entryTournament" />
+  </message>
+  <message name="entryTournamentResponse">
+    <part name="parameters" element="tns:entryTournamentResponse" />
+  </message>
+  <message name="guestEntryTournament">
+    <part name="parameters" element="tns:guestEntryTournament" />
+  </message>
+  <message name="guestEntryTournamentResponse">
+    <part name="parameters" element="tns:guestEntryTournamentResponse" />
+  </message>
+  <message name="cancelTournamentEntry">
+    <part name="parameters" element="tns:cancelTournamentEntry" />
+  </message>
+  <message name="retireTournament">
+    <part name="parameters" element="tns:retireTournament" />
+  </message>
+  <message name="setTournamentPlayerWaiting">
+    <part name="parameters" element="tns:setTournamentPlayerWaiting" />
+  </message>
+  <message name="setTournamentPlayerFighting">
+    <part name="parameters" element="tns:setTournamentPlayerFighting" />
+  </message>
+  <message name="setTournamentResults">
+    <part name="parameters" element="tns:setTournamentResults" />
+  </message>
+  <message name="addTournamentChat">
+    <part name="parameters" element="tns:addTournamentChat" />
+  </message>
+  <message name="registerMatching">
+    <part name="parameters" element="tns:registerMatching" />
+  </message>
+  <message name="unregisterMatching">
+    <part name="parameters" element="tns:unregisterMatching" />
+  </message>
+  <message name="addMatchingHistory">
+    <part name="parameters" element="tns:addMatchingHistory" />
+  </message>
+  <message name="setPrepared">
+    <part name="parameters" element="tns:setPrepared" />
+  </message>
+  <message name="skipMatching">
+    <part name="parameters" element="tns:skipMatching" />
+  </message>
+  <message name="getMatchingResult">
+    <part name="parameters" element="tns:getMatchingResult" />
+  </message>
+  <message name="getMatchingResultResponse">
+    <part name="parameters" element="tns:getMatchingResultResponse" />
+  </message>
+  <message name="getAllDataEx">
+    <part name="parameters" element="tns:getAllDataEx" />
+  </message>
+  <message name="getAllDataExResponse">
+    <part name="parameters" element="tns:getAllDataExResponse" />
+  </message>
+  <message name="getAllData">
+    <part name="parameters" element="tns:getAllData" />
+  </message>
+  <message name="getAllDataResponse">
+    <part name="parameters" element="tns:getAllDataResponse" />
+  </message>
+  <message name="leave">
+    <part name="parameters" element="tns:leave" />
+  </message>
+  <portType name="AddressService">
+    <operation name="registerHost">
+      <input message="tns:registerHost" />
+      <output message="tns:registerHostResponse" />
+    </operation>
+    <operation name="unregisterHost">
+      <input message="tns:unregisterHost" />
+    </operation>
+    <operation name="getServerVersion">
+      <input message="tns:getServerVersion" />
+      <output message="tns:getServerVersionResponse" />
+    </operation>
+    <operation name="getServerSetting">
+      <input message="tns:getServerSetting" />
+      <output message="tns:getServerSettingResponse" />
+    </operation>
+    <operation name="getServerSettings">
+      <input message="tns:getServerSettings" />
+      <output message="tns:getServerSettingsResponse" />
+    </operation>
+    <operation name="clearHosts">
+      <input message="tns:clearHosts" />
+    </operation>
+    <operation name="clearTournaments">
+      <input message="tns:clearTournaments" />
+      <output message="tns:clearTournamentsResponse" />
+    </operation>
+    <operation name="clearChat">
+      <input message="tns:clearChat" />
+    </operation>
+    <operation name="setAnnounces">
+      <input message="tns:setAnnounces" />
+    </operation>
+    <operation name="addAnnounce">
+      <input message="tns:addAnnounce" />
+    </operation>
+    <operation name="removeAnnounce">
+      <input message="tns:removeAnnounce" />
+    </operation>
+    <operation name="clearAnnounce">
+      <input message="tns:clearAnnounce" />
+    </operation>
+    <operation name="forceRegisterHost">
+      <input message="tns:forceRegisterHost" />
+    </operation>
+    <operation name="forceRegisterHostEx">
+      <input message="tns:forceRegisterHostEx" />
+    </operation>
+    <operation name="forceUnregisterHost">
+      <input message="tns:forceUnregisterHost" />
+    </operation>
+    <operation name="forceUnregisterTournament">
+      <input message="tns:forceUnregisterTournament" />
+    </operation>
+    <operation name="forceSetFighting">
+      <input message="tns:forceSetFighting" />
+    </operation>
+    <operation name="addAdminChat">
+      <input message="tns:addAdminChat" />
+    </operation>
+    <operation name="getAddressById">
+      <input message="tns:getAddressById" />
+      <output message="tns:getAddressByIdResponse" />
+    </operation>
+    <operation name="setEnableRemoteAdmin">
+      <input message="tns:setEnableRemoteAdmin" />
+    </operation>
+    <operation name="getUserCount">
+      <input message="tns:getUserCount" />
+      <output message="tns:getUserCountResponse" />
+    </operation>
+    <operation name="enter">
+      <input message="tns:enter" />
+      <output message="tns:enterResponse" />
+    </operation>
+    <operation name="registerHostInformation">
+      <input message="tns:registerHostInformation" />
+    </operation>
+    <operation name="registerHostEx">
+      <input message="tns:registerHostEx" />
+      <output message="tns:registerHostExResponse" />
+    </operation>
+    <operation name="setFighting">
+      <input message="tns:setFighting" />
+    </operation>
+    <operation name="addChat">
+      <input message="tns:addChat" />
+    </operation>
+    <operation name="addChatEx">
+      <input message="tns:addChatEx" />
+    </operation>
+    <operation name="getTournamentData">
+      <input message="tns:getTournamentData" />
+      <output message="tns:getTournamentDataResponse" />
+    </operation>
+    <operation name="registerTournament">
+      <input message="tns:registerTournament" />
+    </operation>
+    <operation name="unregisterTournament">
+      <input message="tns:unregisterTournament" />
+    </operation>
+    <operation name="addTournamentManager">
+      <input message="tns:addTournamentManager" />
+    </operation>
+    <operation name="removeTournamentManager">
+      <input message="tns:removeTournamentManager" />
+    </operation>
+    <operation name="addTournamentDummyPlayer">
+      <input message="tns:addTournamentDummyPlayer" />
+    </operation>
+    <operation name="cancelTournamentEntryByManager">
+      <input message="tns:cancelTournamentEntryByManager" />
+    </operation>
+    <operation name="addTournamentSpectator">
+      <input message="tns:addTournamentSpectator" />
+    </operation>
+    <operation name="removeTournamentSpectator">
+      <input message="tns:removeTournamentSpectator" />
+    </operation>
+    <operation name="setTournamentAnnounces">
+      <input message="tns:setTournamentAnnounces" />
+    </operation>
+    <operation name="setTournamentUserCount">
+      <input message="tns:setTournamentUserCount" />
+    </operation>
+    <operation name="startTournament">
+      <input message="tns:startTournament" />
+    </operation>
+    <operation name="retireTournamentByManager">
+      <input message="tns:retireTournamentByManager" />
+    </operation>
+    <operation name="kickTournamentUser">
+      <input message="tns:kickTournamentUser" />
+    </operation>
+    <operation name="setTournamentResultsByManager">
+      <input message="tns:setTournamentResultsByManager" />
+    </operation>
+    <operation name="entryTournament">
+      <input message="tns:entryTournament" />
+      <output message="tns:entryTournamentResponse" />
+    </operation>
+    <operation name="guestEntryTournament">
+      <input message="tns:guestEntryTournament" />
+      <output message="tns:guestEntryTournamentResponse" />
+    </operation>
+    <operation name="cancelTournamentEntry">
+      <input message="tns:cancelTournamentEntry" />
+    </operation>
+    <operation name="retireTournament">
+      <input message="tns:retireTournament" />
+    </operation>
+    <operation name="setTournamentPlayerWaiting">
+      <input message="tns:setTournamentPlayerWaiting" />
+    </operation>
+    <operation name="setTournamentPlayerFighting">
+      <input message="tns:setTournamentPlayerFighting" />
+    </operation>
+    <operation name="setTournamentResults">
+      <input message="tns:setTournamentResults" />
+    </operation>
+    <operation name="addTournamentChat">
+      <input message="tns:addTournamentChat" />
+    </operation>
+    <operation name="registerMatching">
+      <input message="tns:registerMatching" />
+    </operation>
+    <operation name="unregisterMatching">
+      <input message="tns:unregisterMatching" />
+    </operation>
+    <operation name="addMatchingHistory">
+      <input message="tns:addMatchingHistory" />
+    </operation>
+    <operation name="setPrepared">
+      <input message="tns:setPrepared" />
+    </operation>
+    <operation name="skipMatching">
+      <input message="tns:skipMatching" />
+    </operation>
+    <operation name="getMatchingResult">
+      <input message="tns:getMatchingResult" />
+      <output message="tns:getMatchingResultResponse" />
+    </operation>
+    <operation name="getAllDataEx">
+      <input message="tns:getAllDataEx" />
+      <output message="tns:getAllDataExResponse" />
+    </operation>
+    <operation name="getAllData">
+      <input message="tns:getAllData" />
+      <output message="tns:getAllDataResponse" />
+    </operation>
+    <operation name="leave">
+      <input message="tns:leave" />
+    </operation>
+  </portType>
+  <binding name="AddressServicePortBinding" type="tns:AddressService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="registerHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="unregisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getServerVersion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServerSetting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getServerSettings">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="clearHosts">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="clearTournaments">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="clearChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setAnnounces">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="removeAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="clearAnnounce">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="forceRegisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="forceRegisterHostEx">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="forceUnregisterHost">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="forceUnregisterTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="forceSetFighting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addAdminChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getAddressById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setEnableRemoteAdmin">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getUserCount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="enter">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registerHostInformation">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="registerHostEx">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="setFighting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addChatEx">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getTournamentData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registerTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="unregisterTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addTournamentManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="removeTournamentManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addTournamentDummyPlayer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="cancelTournamentEntryByManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addTournamentSpectator">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="removeTournamentSpectator">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentAnnounces">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentUserCount">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="startTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="retireTournamentByManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="kickTournamentUser">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentResultsByManager">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="entryTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="guestEntryTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cancelTournamentEntry">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="retireTournament">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentPlayerWaiting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentPlayerFighting">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setTournamentResults">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addTournamentChat">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="registerMatching">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="unregisterMatching">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="addMatchingHistory">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="setPrepared">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="skipMatching">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+    <operation name="getMatchingResult">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllDataEx">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllData">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="leave">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+    </operation>
+  </binding>
+  <service name="AddressService">
+    <port name="AddressServicePort" binding="tns:AddressServicePortBinding">
+      <soap:address location="http://localhost:8080/HisoutenAddressService/AddressService" />
+    </port>
+  </service>
+</definitions>
