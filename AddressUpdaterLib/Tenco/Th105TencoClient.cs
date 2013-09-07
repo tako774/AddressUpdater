@@ -27,7 +27,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         {
             if (string.IsNullOrEmpty(account))
                 throw new System.ArgumentNullException("account");
-            _mypage = new Uri(string.Format("http://tenco.xrea.jp/game/1/account/{0}/output=xml", account));
+            _mypage = new Uri(string.Format("http://tenco.info/game/1/account/{0}/output=xml", account));
         }
 
         /// <summary>

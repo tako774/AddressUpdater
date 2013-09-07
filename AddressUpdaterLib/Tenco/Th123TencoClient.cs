@@ -32,7 +32,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
                 throw new System.ArgumentNullException("account");
 
             AccountName = accountName;
-            _mypage = new Uri(string.Format("http://tenco.xrea.jp/game/2/account/{0}/output=xml", accountName));
+            _mypage = new Uri(string.Format("http://tenco.info/game/2/account/{0}/output=xml", accountName));
             _ratings = new Collection<Th123Rating>();
         }
 

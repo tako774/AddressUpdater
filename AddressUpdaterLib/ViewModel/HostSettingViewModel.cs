@@ -875,7 +875,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 return;
 
             Process.Start(string.Format(
-                "http://tenco.xrea.jp/game/1/account/{0}/",
+                "http://tenco.info/game/1/account/{0}/",
                 TencoAccountName));
         }
 
@@ -888,7 +888,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 return;
 
             Process.Start(string.Format(
-                "http://tenco.xrea.jp/game/2/account/{0}/",
+                "http://tenco.info/game/2/account/{0}/",
                 TencoAccountName));
         }
         #endregion
