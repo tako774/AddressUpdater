@@ -3117,7 +3117,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.AddressService {
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hisoutenAddressService/")]
     public partial class tencoRating {
         
-        private th123Characters characterField;
+        private th135Characters characterField;
         
         private int valueField;
         
@@ -3125,7 +3125,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.AddressService {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public th123Characters Character {
+        public th135Characters Character {
             get {
                 return this.characterField;
             }
@@ -3163,7 +3163,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.AddressService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://hisoutenAddressService/")]
-    public partial class th123Characters {
+    public partial class th135Characters {
         
         private int valueField;
         

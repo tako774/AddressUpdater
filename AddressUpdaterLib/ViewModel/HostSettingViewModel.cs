@@ -258,22 +258,22 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// <summary>
         /// キャラ一覧の取得
         /// </summary>
-        public ReadOnlyCollection<KeyValuePair<string, Th123Characters>> Characters
+        public ReadOnlyCollection<KeyValuePair<string, Th135Characters>> Characters
         {
             get
             {
-                var characters = new Collection<KeyValuePair<string, Th123Characters>>();
-                foreach (Th123Characters value in Enum.GetValues(typeof(Th123Characters)))
-                    characters.Add(new KeyValuePair<string, Th123Characters>(EnumTextAttribute.GetText(value), value));
-                return new ReadOnlyCollection<KeyValuePair<string, Th123Characters>>(characters);
+                var characters = new Collection<KeyValuePair<string, Th135Characters>>();
+                foreach (Th135Characters value in Enum.GetValues(typeof(Th135Characters)))
+                    characters.Add(new KeyValuePair<string, Th135Characters>(EnumTextAttribute.GetText(value), value));
+                return new ReadOnlyCollection<KeyValuePair<string, Th135Characters>>(characters);
             }
         }
 
         /// <summary>
         /// 選択されたキャラ
         /// </summary>
-        [DefaultValue(Th123Characters.Random)]
-        public Th123Characters SelectedCharacter
+        [DefaultValue(Th135Characters.Random)]
+        public Th135Characters SelectedCharacter
         {
             get { return _selectedCharacter; }
             set
@@ -285,7 +285,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 OnPropertyChanged("Character");
             }
         }
-        private Th123Characters _selectedCharacter = Th123Characters.Random;
+        private Th135Characters _selectedCharacter = Th135Characters.Random;
 
         /// <summary>
         /// キャラ名を隠すかどうかの取得・設定
@@ -346,7 +346,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// <summary>
         /// 選択されているゲーム(for Tenco)
         /// </summary>
-        [DefaultValue(Games.Th123)]
+        [DefaultValue(Games.Th135)]
         public Games SelectedGame
         {
             get { return _selectedGame; }
@@ -359,7 +359,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 OnPropertyChanged("SelectedGame");
             }
         }
-        private Games _selectedGame = Games.Th123;
+        private Games _selectedGame = Games.Th135;
 
         /// <summary>
         /// 選択されているタブのIndex(for Tenco)
@@ -375,7 +375,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
 
                 _selectedTabIndex = value;
                 if (value == 0)
-                    SelectedGame = Games.Th123;
+                    SelectedGame = Games.Th135;
                 else if (value == 1)
                     SelectedGame = Games.Th105;
                 OnPropertyChanged("SelectedTabIndex");
@@ -514,7 +514,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// <summary>
         /// レート情報(非)
         /// </summary>
-        public ReadOnlyCollection<Th123Rating> Ratings2
+        public ReadOnlyCollection<Th135Rating> Ratings2
         {
             get { return _ratings2; }
             private set
@@ -526,7 +526,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 OnPropertyChanged("Ratings2");
             }
         }
-        private ReadOnlyCollection<Th123Rating> _ratings2 = new ReadOnlyCollection<Th123Rating>(new Collection<Th123Rating>());
+        private ReadOnlyCollection<Th135Rating> _ratings2 = new ReadOnlyCollection<Th135Rating>(new Collection<Th135Rating>());
         #endregion
 
 
@@ -565,9 +565,9 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// <returns></returns>
         public host GetTencoHost()
         {
-            if (SelectedGame == Games.Th123)
+            if (SelectedGame == Games.Th135)
             {
-                Th123Rating rating = null;
+                Th135Rating rating = null;
                 foreach (var r in Ratings2)
                 {
                     if (r.Character == SelectedCharacter)
@@ -617,7 +617,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 foreach (var r in Ratings)
                 {
                     var searchCharacter = (byte)SelectedCharacter;
-                    if (SelectedCharacter == Th123Characters.Random)
+                    if (SelectedCharacter == Th135Characters.Random)
                         searchCharacter = (byte)Th105Characters.Random;
 
                     if (r.Character == (Th105Characters)searchCharacter)
@@ -744,7 +744,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// </summary>
         public void GetTencoRatings()
         {
-            if(SelectedGame == Games.Th123)
+            if(SelectedGame == Games.Th135)
             {
                 if (string.IsNullOrEmpty(TencoAccountName2))
                     return;
@@ -757,7 +757,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
 
                 try
                 {
-                    var tenoClient = new Th123TencoClient(TencoAccountName2);
+                    var tenoClient = new Th135TencoClient(TencoAccountName2);
                     tenoClient.UpdateRating();
                     var ratings = tenoClient.GetRatings();
 
@@ -773,7 +773,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                         matchCountSum += rating.MatchCount;
                     }
 
-                    var allRatings = new Collection<Th123Rating>();
+                    var allRatings = new Collection<Th135Rating>();
                     foreach (var rating in ratings)
                         allRatings.Add(rating);
 
@@ -781,12 +781,12 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                     {
                         decimal ratingAverage = ratingSum / ratings.Count;
                         decimal rdesSum = 0;
-                        foreach (Th123Rating rating in ratings)
+                        foreach (Th135Rating rating in ratings)
                         {
                             rdesSum += (rating.Value - ratingAverage) * (rating.Value - ratingAverage);
                         }
-                        var average = new Th123Rating(
-                            Th123Characters.Random,
+                        var average = new Th135Rating(
+                            Th135Characters.Random,
                             (int)Math.Round(ratingAverage, 0),
                             (int)Math.Round(Math.Sqrt((double)((deviationSum + rdesSum) / ratings.Count)), 0),
                             matchAccountsSum,
@@ -794,7 +794,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                         allRatings.Add(average);
                     }
 
-                    Ratings2 = new ReadOnlyCollection<Th123Rating>(allRatings);
+                    Ratings2 = new ReadOnlyCollection<Th135Rating>(allRatings);
 
                     _lastRatingGetTime2 = DateTime.Now;
                 }
@@ -875,7 +875,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 return;
 
             Process.Start(string.Format(
-                "http://tenco.info/game/1/account/{0}/",
+                "http://tenco.info/game/3/account/{0}/",
                 TencoAccountName));
         }
 
@@ -888,7 +888,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
                 return;
 
             Process.Start(string.Format(
-                "http://tenco.info/game/2/account/{0}/",
+                "http://tenco.info/game/4/account/{0}/",
                 TencoAccountName));
         }
         #endregion

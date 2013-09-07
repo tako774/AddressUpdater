@@ -4,12 +4,12 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
     /// <summary>
     /// レーティング
     /// </summary>
-    public class Th123Rating
+    public class Th135Rating
     {
         /// <summary>
         /// キャラ
         /// </summary>
-        public readonly Th123Characters Character;
+        public readonly Th135Characters Character;
         /// <summary>
         /// レーティング
         /// </summary>
@@ -35,7 +35,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         /// <param name="deviation">偏差</param>
         /// <param name="matchAccounts">対戦人数</param>
         /// <param name="matchCount">対戦数</param>
-        public Th123Rating(Th123Characters character, int value, int deviation, int matchAccounts, int matchCount)
+        public Th135Rating(Th135Characters character, int value, int deviation, int matchAccounts, int matchCount)
         {
             Character = character;
             Value = value;

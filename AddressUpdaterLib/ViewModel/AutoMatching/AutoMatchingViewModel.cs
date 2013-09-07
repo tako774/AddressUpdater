@@ -120,8 +120,8 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
         private int _port = 10800;
 
         /// <summary></summary>
-        [DefaultValue(Th123Characters.Reimu)]
-        public Th123Characters Character
+        [DefaultValue(Th135Characters.Reimu)]
+        public Th135Characters Character
         {
             get { return _character; }
             set
@@ -135,20 +135,20 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
                 OnPropertyChanged("Character");
             }
         }
-        private Th123Characters _character = Th123Characters.Reimu;
+        private Th135Characters _character = Th135Characters.Reimu;
 
         /// <summary></summary>
-        public ReadOnlyCollection<KeyValuePair<string, Th123Characters>> Characters
+        public ReadOnlyCollection<KeyValuePair<string, Th135Characters>> Characters
         {
             get
             {
-                var characters = new Collection<KeyValuePair<string, Th123Characters>>();
-                foreach (Th123Characters value in Enum.GetValues(typeof(Th123Characters)))
+                var characters = new Collection<KeyValuePair<string, Th135Characters>>();
+                foreach (Th135Characters value in Enum.GetValues(typeof(Th135Characters)))
                 {
-                    if (value != Th123Characters.Random)
-                        characters.Add(new KeyValuePair<string, Th123Characters>(EnumTextAttribute.GetText(value), value));
+                    if (value != Th135Characters.Random)
+                        characters.Add(new KeyValuePair<string, Th135Characters>(EnumTextAttribute.GetText(value), value));
                 }
-                return new ReadOnlyCollection<KeyValuePair<string, Th123Characters>>(characters);
+                return new ReadOnlyCollection<KeyValuePair<string, Th135Characters>>(characters);
             }
         }
 
@@ -189,7 +189,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
         private int _matchingSpan = 150;
 
         /// <summary></summary>
-        public ReadOnlyCollection<Th123Rating> Ratings
+        public ReadOnlyCollection<Th135Rating> Ratings
         {
             get { return _ratings; }
             set
@@ -201,7 +201,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
                 OnPropertyChanged("Ratings");
             }
         }
-        private ReadOnlyCollection<Th123Rating> _ratings;
+        private ReadOnlyCollection<Th135Rating> _ratings;
 
         /// <summary></summary>
         [DefaultValue(null)]
@@ -306,7 +306,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
         public void ReflectUserConfig()
         {
             AccountName = UserConfig.AutoMatchingInformation.AccountName;
-            Character = (Th123Characters)UserConfig.AutoMatchingInformation.Character;
+            Character = (Th135Characters)UserConfig.AutoMatchingInformation.Character;
             MatchingSpan = UserConfig.AutoMatchingInformation.MatchingSpan;
             IsHostable = UserConfig.AutoMatchingInformation.IsHostable;
             IsRoomOnly = UserConfig.AutoMatchingInformation.IsRoomOnry;
@@ -332,8 +332,8 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel.AutoMatching
         {
             Phase = MatchingPhase.Matching;
             Oponent = null;
-            th123Characters character = new th123Characters() { Value = (int)Character };
-            Th123Rating rating = null;
+            th135Characters character = new th135Characters() { Value = (int)Character };
+            Th135Rating rating = null;
             foreach (var r in Ratings)
                 if (r.Character == Character)
                     rating = r;

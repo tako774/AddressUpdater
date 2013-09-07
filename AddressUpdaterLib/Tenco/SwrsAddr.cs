@@ -87,12 +87,12 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         /// </summary>
         /// <returns></returns>
         /// <exception cref="ReadProcessMemoryFailedException"></exception>
-        public Th123Characters GetCharacter1P()
+        public Th135Characters GetCharacter1P()
         {
             if (!CanRead())
                 throw new ReadProcessMemoryFailedException();
 
-            return (Th123Characters)Kernel32.ReadProcessMemory(_process.Handle, P_1P_CHARACTER);
+            return (Th135Characters)Kernel32.ReadProcessMemory(_process.Handle, P_1P_CHARACTER);
         }
 
         /// <summary>
@@ -100,12 +100,12 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         /// </summary>
         /// <returns></returns>
         /// <exception cref="ReadProcessMemoryFailedException"></exception>
-        public Th123Characters GetCharacter2P()
+        public Th135Characters GetCharacter2P()
         {
             if (!CanRead())
                 throw new ReadProcessMemoryFailedException();
 
-            return (Th123Characters)Kernel32.ReadProcessMemory(_process.Handle, P_2P_CHARACTER);
+            return (Th135Characters)Kernel32.ReadProcessMemory(_process.Handle, P_2P_CHARACTER);
         }
 
         /// <summary>

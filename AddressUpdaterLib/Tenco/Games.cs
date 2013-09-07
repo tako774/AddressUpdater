@@ -11,7 +11,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
     {
         /// <summary>東方緋想天</summary>
         Th105 = 1,
-        /// <summary>東方非想天則</summary>
-        Th123 = 2,
+        /// <summary>東方心綺楼</summary>
+        Th135 = 4,
     }
 }

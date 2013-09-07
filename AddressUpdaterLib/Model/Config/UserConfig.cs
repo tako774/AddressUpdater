@@ -30,10 +30,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model.Config
         public static readonly Collection<ServerInformation> DEFAULT_SERVER_INFORMATIONS =
             new Collection<ServerInformation>(new ServerInformation[]
             {
-                new ServerInformation("AddressUpdater", AddressUpdaterUri.ADMIN_SERVICE),
-                new ServerInformation("AddressUpdater" + "(Tenco)", AddressUpdaterUri.ADMIN_SERVICE_TENCO){ Visible = false },
-                new ServerInformation("AddressUpdater" + "(チャット無し)", AddressUpdaterUri.ADMIN_SERVICE_NO_CHAT),
-                new ServerInformation("野良うさぎ(仮)", "http://www.norausagi.mydns.jp:8080/HisoutenAddressService/AddressService")
+                new ServerInformation("心綺楼(Tenco!鯖)", AddressUpdaterUri.TENCO_SERVER_TH135),
             });
 
         /// <summary>設定ファイル</summary>

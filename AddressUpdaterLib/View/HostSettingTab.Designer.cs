@@ -30,13 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tencoTabControl = new System.Windows.Forms.TabControl();
-            this.th123TabPage = new System.Windows.Forms.TabPage();
+            this.th135TabPage = new System.Windows.Forms.TabPage();
             this.ratingList2 = new System.Windows.Forms.ListView();
-            this.columnHeader16 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader17 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader18 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader19 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader20 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader16 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader17 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader18 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader19 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader20 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tencoAccountLinkLabel2 = new System.Windows.Forms.LinkLabel();
             this.tencoFolderButton2 = new System.Windows.Forms.Button();
             this.sendRecordsButton2 = new System.Windows.Forms.Button();
@@ -45,11 +45,11 @@
             this.accountInput2 = new System.Windows.Forms.TextBox();
             this.th105TabPage = new System.Windows.Forms.TabPage();
             this.ratingList = new System.Windows.Forms.ListView();
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tencoAccountLinkLabel = new System.Windows.Forms.LinkLabel();
             this.tencoFolderButton = new System.Windows.Forms.Button();
             this.sendRecordsButton = new System.Windows.Forms.Button();
@@ -74,25 +74,25 @@
             this.portInput = new System.Windows.Forms.NumericUpDown();
             this.ipInput = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
-            this.characterColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.ratingValueColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.ratingDeviationColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.matchAccountsColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.matchCountColumnHeader = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader8 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader9 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader10 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader11 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader12 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader13 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader14 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader15 = new System.Windows.Forms.ColumnHeader();
+            this.characterColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ratingValueColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ratingDeviationColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.matchAccountsColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.matchCountColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader12 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.folderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
             this.panel1.SuspendLayout();
             this.tencoTabControl.SuspendLayout();
-            this.th123TabPage.SuspendLayout();
+            this.th135TabPage.SuspendLayout();
             this.th105TabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userCountInput)).BeginInit();
             this.modeSelectPanel.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             // tencoTabControl
             // 
-            this.tencoTabControl.Controls.Add(this.th123TabPage);
+            this.tencoTabControl.Controls.Add(this.th135TabPage);
             this.tencoTabControl.Controls.Add(this.th105TabPage);
             this.tencoTabControl.Location = new System.Drawing.Point(333, 25);
             this.tencoTabControl.Name = "tencoTabControl";
@@ -133,21 +133,21 @@
             this.tencoTabControl.Size = new System.Drawing.Size(399, 354);
             this.tencoTabControl.TabIndex = 2;
             // 
-            // th123TabPage
+            // th135TabPage
             // 
-            this.th123TabPage.Controls.Add(this.ratingList2);
-            this.th123TabPage.Controls.Add(this.tencoAccountLinkLabel2);
-            this.th123TabPage.Controls.Add(this.tencoFolderButton2);
-            this.th123TabPage.Controls.Add(this.sendRecordsButton2);
-            this.th123TabPage.Controls.Add(this.tencoFolderText2);
-            this.th123TabPage.Controls.Add(this.updateRatingButton2);
-            this.th123TabPage.Controls.Add(this.accountInput2);
-            this.th123TabPage.Location = new System.Drawing.Point(4, 22);
-            this.th123TabPage.Name = "th123TabPage";
-            this.th123TabPage.Size = new System.Drawing.Size(391, 328);
-            this.th123TabPage.TabIndex = 0;
-            this.th123TabPage.Text = "非想天則";
-            this.th123TabPage.UseVisualStyleBackColor = true;
+            this.th135TabPage.Controls.Add(this.ratingList2);
+            this.th135TabPage.Controls.Add(this.tencoAccountLinkLabel2);
+            this.th135TabPage.Controls.Add(this.tencoFolderButton2);
+            this.th135TabPage.Controls.Add(this.sendRecordsButton2);
+            this.th135TabPage.Controls.Add(this.tencoFolderText2);
+            this.th135TabPage.Controls.Add(this.updateRatingButton2);
+            this.th135TabPage.Controls.Add(this.accountInput2);
+            this.th135TabPage.Location = new System.Drawing.Point(4, 22);
+            this.th135TabPage.Name = "th135TabPage";
+            this.th135TabPage.Size = new System.Drawing.Size(391, 328);
+            this.th135TabPage.TabIndex = 0;
+            this.th135TabPage.Text = "心綺楼";
+            this.th135TabPage.UseVisualStyleBackColor = true;
             // 
             // ratingList2
             // 
@@ -266,7 +266,7 @@
             this.th105TabPage.Name = "th105TabPage";
             this.th105TabPage.Size = new System.Drawing.Size(391, 328);
             this.th105TabPage.TabIndex = 1;
-            this.th105TabPage.Text = "緋想天";
+            this.th105TabPage.Text = "不使用";
             this.th105TabPage.UseVisualStyleBackColor = true;
             // 
             // ratingList
@@ -457,7 +457,7 @@
             this.aboutIpLabel.ForeColor = System.Drawing.Color.Blue;
             this.aboutIpLabel.Location = new System.Drawing.Point(4, 6);
             this.aboutIpLabel.Name = "aboutIpLabel";
-            this.aboutIpLabel.Size = new System.Drawing.Size(313, 16);
+            this.aboutIpLabel.Size = new System.Drawing.Size(293, 16);
             this.aboutIpLabel.TabIndex = 5;
             this.aboutIpLabel.Text = "※IPが空欄の場合は、自動検出されます。";
             // 
@@ -519,8 +519,8 @@
             this.templateSelect.Size = new System.Drawing.Size(320, 20);
             this.templateSelect.TabIndex = 130;
             this.templateSelect.ValueMember = "Contents";
-            this.templateSelect.SelectedIndexChanged += new System.EventHandler(this.templateSelect_SelectedIndexChanged);
             this.templateSelect.DropDown += new System.EventHandler(this.templateSelect_DropDown);
+            this.templateSelect.SelectedIndexChanged += new System.EventHandler(this.templateSelect_SelectedIndexChanged);
             // 
             // commentInput
             // 
@@ -663,8 +663,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tencoTabControl.ResumeLayout(false);
-            this.th123TabPage.ResumeLayout(false);
-            this.th123TabPage.PerformLayout();
+            this.th135TabPage.ResumeLayout(false);
+            this.th135TabPage.PerformLayout();
             this.th105TabPage.ResumeLayout(false);
             this.th105TabPage.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userCountInput)).EndInit();
@@ -697,7 +697,7 @@
         private System.Windows.Forms.ComboBox tournamentTypeSelect;
         private System.Windows.Forms.NumericUpDown userCountInput;
         private System.Windows.Forms.TabControl tencoTabControl;
-        private System.Windows.Forms.TabPage th123TabPage;
+        private System.Windows.Forms.TabPage th135TabPage;
         private System.Windows.Forms.TabPage th105TabPage;
         private System.Windows.Forms.ListView ratingList;
         private System.Windows.Forms.ColumnHeader columnHeader1;

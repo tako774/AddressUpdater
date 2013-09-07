@@ -39,7 +39,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.AddressService
         {
             var clone = new tencoRating()
             {
-                Character = (th123Characters)Character.Clone(),
+                Character = (th135Characters)Character.Clone(),
                 Value = Value,
                 Deviation = Deviation,
             };

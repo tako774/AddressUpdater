@@ -110,11 +110,11 @@
             this.versionLabel.AutoSize = true;
             this.versionLabel.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.versionLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.versionLabel.Location = new System.Drawing.Point(76, 36);
+            this.versionLabel.Location = new System.Drawing.Point(76, 28);
             this.versionLabel.Name = "versionLabel";
-            this.versionLabel.Size = new System.Drawing.Size(165, 18);
+            this.versionLabel.Size = new System.Drawing.Size(165, 36);
             this.versionLabel.TabIndex = 242;
-            this.versionLabel.Text = "AddressUpdater 8.10";
+            this.versionLabel.Text = "AddressUpdater 8.12\r\nfor TH135";
             this.versionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // adminSiteLinkLabel1

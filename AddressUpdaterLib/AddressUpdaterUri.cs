@@ -15,5 +15,7 @@
         public const string ADMIN_SERVICE_TENCO = "http://www.bngper.mydns.jp/HisoutenAddressServiceTenco/AddressService";
         /// <summary>本家サービス（チャット無）</summary>
         public const string ADMIN_SERVICE_NO_CHAT = "http://www.bngper.mydns.jp/HisoutenAddressServiceNoChat/AddressService";
+        /// <summary>心綺楼(Tenco!サーバー)</summary>
+        public const string TENCO_SERVER_TH135 = "http://au.tenco.info/SinkirouAddressService/AddressService";
     }
 }

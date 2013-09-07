@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.mainTabControl = new System.Windows.Forms.TabControl();
             this.hostSettingTabPage = new System.Windows.Forms.TabPage();
+            this.userConfigTabPage = new System.Windows.Forms.TabPage();
+            this.versionTabPage = new System.Windows.Forms.TabPage();
+            this.tskTimer = new System.Windows.Forms.Timer(this.components);
             this.hostSettingTab = new HisoutenSupportTools.AddressUpdater.Lib.View.HostSettingTab();
             this.hostSettingViewModel = new HisoutenSupportTools.AddressUpdater.Lib.ViewModel.HostSettingViewModel(this.components);
-            this.userConfigTabPage = new System.Windows.Forms.TabPage();
             this.userConfigTab = new HisoutenSupportTools.AddressUpdater.View.UserConfigTab();
-            this.versionTabPage = new System.Windows.Forms.TabPage();
             this.versionTab = new HisoutenSupportTools.AddressUpdater.Lib.View.VersionTab();
             this.versionViewModel = new HisoutenSupportTools.AddressUpdater.Lib.ViewModel.VersionViewModel(this.components);
-            this.tskTimer = new System.Windows.Forms.Timer(this.components);
             this.mainTabControl.SuspendLayout();
             this.hostSettingTabPage.SuspendLayout();
             this.userConfigTabPage.SuspendLayout();
@@ -69,6 +69,32 @@
             this.hostSettingTabPage.Text = "ホスト設定";
             this.hostSettingTabPage.UseVisualStyleBackColor = true;
             // 
+            // userConfigTabPage
+            // 
+            this.userConfigTabPage.Controls.Add(this.userConfigTab);
+            this.userConfigTabPage.Location = new System.Drawing.Point(4, 22);
+            this.userConfigTabPage.Name = "userConfigTabPage";
+            this.userConfigTabPage.Size = new System.Drawing.Size(741, 387);
+            this.userConfigTabPage.TabIndex = 2;
+            this.userConfigTabPage.Text = "ユーザー設定";
+            this.userConfigTabPage.UseVisualStyleBackColor = true;
+            // 
+            // versionTabPage
+            // 
+            this.versionTabPage.Controls.Add(this.versionTab);
+            this.versionTabPage.Location = new System.Drawing.Point(4, 22);
+            this.versionTabPage.Name = "versionTabPage";
+            this.versionTabPage.Size = new System.Drawing.Size(741, 387);
+            this.versionTabPage.TabIndex = 3;
+            this.versionTabPage.Text = "バージョン情報";
+            this.versionTabPage.UseVisualStyleBackColor = true;
+            // 
+            // tskTimer
+            // 
+            this.tskTimer.Enabled = true;
+            this.tskTimer.Interval = 5000;
+            this.tskTimer.Tick += new System.EventHandler(this.tskTimer_Tick);
+            // 
             // hostSettingTab
             // 
             this.hostSettingTab.BackColor = System.Drawing.Color.Transparent;
@@ -87,16 +113,6 @@
             this.hostSettingViewModel.Language = null;
             this.hostSettingViewModel.UserConfig = null;
             // 
-            // userConfigTabPage
-            // 
-            this.userConfigTabPage.Controls.Add(this.userConfigTab);
-            this.userConfigTabPage.Location = new System.Drawing.Point(4, 22);
-            this.userConfigTabPage.Name = "userConfigTabPage";
-            this.userConfigTabPage.Size = new System.Drawing.Size(741, 387);
-            this.userConfigTabPage.TabIndex = 2;
-            this.userConfigTabPage.Text = "ユーザー設定";
-            this.userConfigTabPage.UseVisualStyleBackColor = true;
-            // 
             // userConfigTab
             // 
             this.userConfigTab.BackColor = System.Drawing.Color.Transparent;
@@ -108,16 +124,6 @@
             this.userConfigTab.TabIndex = 0;
             this.userConfigTab.Theme = null;
             this.userConfigTab.UserConfig = null;
-            // 
-            // versionTabPage
-            // 
-            this.versionTabPage.Controls.Add(this.versionTab);
-            this.versionTabPage.Location = new System.Drawing.Point(4, 22);
-            this.versionTabPage.Name = "versionTabPage";
-            this.versionTabPage.Size = new System.Drawing.Size(741, 387);
-            this.versionTabPage.TabIndex = 3;
-            this.versionTabPage.Text = "バージョン情報";
-            this.versionTabPage.UseVisualStyleBackColor = true;
             // 
             // versionTab
             // 
@@ -132,12 +138,6 @@
             this.versionTab.UserConfig = null;
             this.versionTab.ViewModel = this.versionViewModel;
             // 
-            // tskTimer
-            // 
-            this.tskTimer.Enabled = true;
-            this.tskTimer.Interval = 5000;
-            this.tskTimer.Tick += new System.EventHandler(this.tskTimer_Tick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -147,11 +147,11 @@
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 9F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(50, 50);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.mainTabControl.ResumeLayout(false);
             this.hostSettingTabPage.ResumeLayout(false);
             this.userConfigTabPage.ResumeLayout(false);

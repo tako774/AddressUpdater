@@ -10,12 +10,12 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
     /// <summary>
     /// Tenco!クライアント(非)
     /// </summary>
-    public class Th123TencoClient
+    public class Th135TencoClient
     {
         /// <summary>Tenco!マイページ</summary>
         private Uri _mypage;
         /// <summary>レーティング</summary>
-        private Collection<Th123Rating> _ratings;
+        private Collection<Th135Rating> _ratings;
 
         /// <summary>Tenco!アカウント名</summary>
         public readonly string AccountName;
@@ -26,23 +26,23 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         /// <param name="accountName">アカウント名</param>
         /// <exception cref="System.ArgumentNullException">account が 空 です。</exception>
         /// <exception cref="System.UriFormatException"></exception>
-        public Th123TencoClient(string accountName)
+        public Th135TencoClient(string accountName)
         {
             if (string.IsNullOrEmpty(accountName))
                 throw new System.ArgumentNullException("account");
 
             AccountName = accountName;
-            _mypage = new Uri(string.Format("http://tenco.info/game/2/account/{0}/output=xml", accountName));
-            _ratings = new Collection<Th123Rating>();
+            _mypage = new Uri(string.Format("http://tenco.info/game/{1}/account/{0}/output=xml", accountName, (int)Games.Th135));
+            _ratings = new Collection<Th135Rating>();
         }
 
         /// <summary>
         /// レーティングの取得
         /// </summary>
         /// <returns>レーティング</returns>
-        public ReadOnlyCollection<Th123Rating> GetRatings()
+        public ReadOnlyCollection<Th135Rating> GetRatings()
         {
-            return new ReadOnlyCollection<Th123Rating>(_ratings);
+            return new ReadOnlyCollection<Th135Rating>(_ratings);
         }
 
         /// <summary>
@@ -62,8 +62,8 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
                 var ratingDoc = new XmlDocument();
                 ratingDoc.LoadXml(mypageXml);
 
-                var ratings = new Collection<Th123Rating>();
-                var characters = ratingDoc.SelectNodes("/gameAccount/account/game[id=2]/type1");
+                var ratings = new Collection<Th135Rating>();
+                var characters = ratingDoc.SelectNodes(String.Format("/gameAccount/account/game[id={0}]/type1", (int)Games.Th135));
                 foreach (XmlNode character in characters)
                 {
                     var characterIdNode = character.SelectSingleNode("id");
@@ -78,7 +78,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
                     var matchAccounts = int.Parse(matchAccountsNode.FirstChild.Value);
                     var matchCount = int.Parse(matchCountNode.FirstChild.Value);
 
-                    ratings.Add(new Th123Rating((Th123Characters)characterId, ratingValue, ratingDeviation, matchAccounts, matchCount));
+                    ratings.Add(new Th135Rating((Th135Characters)characterId, ratingValue, ratingDeviation, matchAccounts, matchCount));
                 }
 
                 _ratings = ratings;

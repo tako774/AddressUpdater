@@ -121,7 +121,7 @@
     <Compile Include="Model\AutoMatching\matchingResult.cs" />
     <Compile Include="Model\AutoMatching\tencoRating.cs" />
     <Compile Include="Model\AutoMatching\tencoUser.cs" />
-    <Compile Include="Model\AutoMatching\th123Characters.cs" />
+    <Compile Include="Model\AutoMatching\th135Characters.cs" />
     <Compile Include="Model\Config\AutoMatchingInformation.cs" />
     <Compile Include="Model\Config\NullColorData.cs" />
     <Compile Include="Model\Config\ExtraWindowInformation.cs" />
@@ -188,10 +188,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Tenco\Th123Characters.cs" />
+    <Compile Include="Tenco\Th135Characters.cs" />
     <Compile Include="Tenco\SwrsAddr.cs" />
-    <Compile Include="Tenco\Th123Rating.cs" />
-    <Compile Include="Tenco\Th123TencoClient.cs" />
+    <Compile Include="Tenco\Th135Rating.cs" />
+    <Compile Include="Tenco\Th135TencoClient.cs" />
     <Compile Include="Util\ArrayExtention.cs" />
     <Compile Include="Util\ObservableCollection.cs" />
     <Compile Include="Tenco\Th105Characters.cs" />

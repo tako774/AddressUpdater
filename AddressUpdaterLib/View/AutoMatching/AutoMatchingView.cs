@@ -16,7 +16,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.View.AutoMatching
     /// </summary>
     public partial class AutoMatchingView : UserControl
     {
-        private Th123TencoClient _tencoClient;
+        private Th135TencoClient _tencoClient;
         private DateTime _lastGetTime = DateTime.MinValue;
 
         /// <summary>
@@ -174,7 +174,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.View.AutoMatching
                                 oponentAccountNameOutput.Visible = true;
                                 oponentRatingLabel.Text = string.Format(
                                     "{0}:{1}±{2}",
-                                    EnumTextAttribute.GetText((Th123Characters)oponet.Rating.Character.Value),
+                                    EnumTextAttribute.GetText((Th135Characters)oponet.Rating.Character.Value),
                                     oponet.Rating.Value,
                                     oponet.Rating.Deviation);
                                 oponentRatingLabel.Visible = true;
@@ -329,13 +329,13 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.View.AutoMatching
                 }
 
                 if (_tencoClient == null)
-                    _tencoClient = new Th123TencoClient(accountNameInput.Text);
+                    _tencoClient = new Th135TencoClient(accountNameInput.Text);
                 else
                 {
                     if (_tencoClient.AccountName != accountNameInput.Text)
                     {
                         _lastGetTime = DateTime.MinValue;
-                        _tencoClient = new Th123TencoClient(accountNameInput.Text);
+                        _tencoClient = new Th135TencoClient(accountNameInput.Text);
                     }
                 }
 

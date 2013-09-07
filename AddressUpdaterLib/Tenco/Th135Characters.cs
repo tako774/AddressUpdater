@@ -1,9 +1,9 @@
 ﻿namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
 {
     /// <summary>
-    /// 東方緋想天キャラ
+    /// 東方非想天則キャラ
     /// </summary>
-    public enum Th105Characters : byte
+    public enum Th135Characters : byte
     {
         /// <summary>霊夢</summary>
         [EnumText("霊夢")]

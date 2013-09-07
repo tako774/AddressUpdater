@@ -70,7 +70,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.View
 
                 ViewModel.Ip = UserConfig.ServerIp;
                 ViewModel.Port = UserConfig.ServerPort;
-                try { ViewModel.SelectedCharacter = (Th123Characters)UserConfig.TencoCharacter; }
+                try { ViewModel.SelectedCharacter = (Th135Characters)UserConfig.TencoCharacter; }
                 catch (Exception) { }
                 ViewModel.IsHideCharacter = UserConfig.HideTencoCharacter;
                 ViewModel.Rank = UserConfig.Rank;

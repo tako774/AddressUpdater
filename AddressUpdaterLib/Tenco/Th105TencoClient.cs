@@ -27,7 +27,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         {
             if (string.IsNullOrEmpty(account))
                 throw new System.ArgumentNullException("account");
-            _mypage = new Uri(string.Format("http://tenco.info/game/1/account/{0}/output=xml", account));
+            _mypage = new Uri(string.Format("http://tenco.info/game/{1}/account/{0}/output=xml", account, (int)Games.Th105));
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
                 ratingDoc.LoadXml(mypageXml);
 
                 var ratings = new Collection<Th105Rating>();
-                var characters = ratingDoc.SelectNodes("/gameAccount/account/game[id=1]/type1");
+                var characters = ratingDoc.SelectNodes(String.Format("/gameAccount/account/game[id={0}]/type1", (int)Games.Th105));
                 foreach (XmlNode character in characters)
                 {
                     var characterIdNode = character.SelectSingleNode("id");
