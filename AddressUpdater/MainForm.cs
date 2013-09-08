@@ -20,7 +20,7 @@ namespace HisoutenSupportTools.AddressUpdater
     {
         /// <summary>終了処理中かどうか</summary>
         private bool _closing = false;
-        /// <summary>天則観の状態</summary>
+        /// <summary>対戦記録ツールの状態</summary>
         private TskStatus _tskStatus = new TskStatus();
 
         /// <summary>
@@ -398,7 +398,7 @@ namespace HisoutenSupportTools.AddressUpdater
         }
 
         /// <summary>
-        /// 天則観確認タイマー処理
+        /// 対戦記録ツール確認タイマー処理
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

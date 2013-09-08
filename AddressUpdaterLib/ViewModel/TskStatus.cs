@@ -3,7 +3,7 @@
 namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
 {
     /// <summary>
-    /// 天則観の状態
+    /// 対戦記録ツールの状態
     /// </summary>
     public class TskStatus
     {

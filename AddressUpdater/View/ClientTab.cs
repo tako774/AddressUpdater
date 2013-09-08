@@ -68,7 +68,7 @@ namespace HisoutenSupportTools.AddressUpdater.View
         }
 
         /// <summary>
-        /// 天則観の状態
+        /// 対戦記録ツールの状態
         /// </summary>
         public TskStatus TskStatus
         {
