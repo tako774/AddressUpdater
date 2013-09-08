@@ -61,7 +61,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
                 catch (NotSupportedException) { return false; }
             }
 
-            // 緋想天のプロセス取得
+            // ゲームプロセス取得
             if (_process == null)
             {
                 if (string.IsNullOrEmpty(Caption))

@@ -56,8 +56,6 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
 
         void Initialize()
         {
-            _windowInformations.Add("東方非想天則 ～ 超弩級ギニョルの謎を追え Ver1.03", "th123_103");
-            _windowInformations.Add("東方緋想天 Ver1.06", "th105_106");
         }
 
 

@@ -73,7 +73,7 @@
             this.windowCaptionInput.Name = "windowCaptionInput";
             this.windowCaptionInput.Size = new System.Drawing.Size(285, 19);
             this.windowCaptionInput.TabIndex = 125;
-            this.windowCaptionInput.Text = "東方非想天則 ～ 超弩級ギニョルの謎を追え Ver1.03";
+            this.windowCaptionInput.Text = "東方心綺楼 Ver.1.21";
             this.windowCaptionInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // getWindowRectButton

@@ -1,7 +1,7 @@
 ﻿namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
 {
     /// <summary>
-    /// 東方非想天則キャラ
+    /// 東方心綺楼キャラ
     /// </summary>
     public enum Th135Characters : byte
     {
