@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using HisoutenSupportTools.AddressUpdater.Lib.Api;
+using HisoutenSupportTools.AddressUpdater.Lib.Util;
 
 namespace HisoutenSupportTools.AddressUpdater.Lib.Model
 {
@@ -98,8 +99,104 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
                 if (_pointer == IntPtr.Zero)
                     return false;
 
-                var scene = Kernel32.ReadProcessMemory(_process.Handle, _pointer);
-                return IsFightingScene(scene);
+                bool _ret;
+                int _readSize;
+
+                Byte[] _ptrBytes = new Byte[4];
+                Byte[] _intBytes = new Byte[4];
+                IntPtr _vmPointer;
+                IntPtr _rootTablePointer;
+                IntPtr _tableItemsPointer;
+                int _tableItemNum;
+
+                int _itemKeyType;
+                IntPtr _itemKeyPtr;
+                int _itemKeyLen;
+                String _itemKey;
+                
+                int _itemValType;
+                int _itemValVal;
+                
+                Dictionary<String, Dictionary<String, int>> _sceneParams = new Dictionary<string,Dictionary<string,int>>();
+                String[] targetKeys = new String[] {"game", "network_inst", "network_is_watch"};
+
+                // メインモジュールのベースアドレス取得
+                IntPtr _mainModulePtr = _process.MainModule.BaseAddress;
+
+                // SQVM のインスタンスアドレス取得
+                _ret = Kernel32.ReadProcessMemory(_process.Handle, _mainModulePtr + _pointer.ToInt32(), _ptrBytes, _ptrBytes.Length, out _readSize);
+                if (!_ret) { return false; }
+                _vmPointer = PtrUtil.BytesToIntPtr(_ptrBytes);
+                
+                // SQRootTable のインスタンスアドレス取得
+                _ret = Kernel32.ReadProcessMemory(_process.Handle, _vmPointer + 0x34, _ptrBytes, _ptrBytes.Length, out _readSize);
+                if (!_ret) { return false; }
+                _rootTablePointer = PtrUtil.BytesToIntPtr(_ptrBytes);
+                
+                // SQRootTable のアイテムのアドレス取得
+                _ret = Kernel32.ReadProcessMemory(_process.Handle, _rootTablePointer + 0x20, _ptrBytes, _ptrBytes.Length, out _readSize);
+                if (!_ret) { return false; }
+                _tableItemsPointer = PtrUtil.BytesToIntPtr(_ptrBytes);
+
+                // SQRootTable のアイテム数取得
+                _ret = Kernel32.ReadProcessMemory(_process.Handle, _rootTablePointer + 0x24, _intBytes, _intBytes.Length, out _readSize);
+                if (!_ret) { return false; }
+                _tableItemNum = BitConverter.ToInt32(_intBytes, 0);
+
+                // SQRootTable から、ゲームシーン状況に関する情報を取得
+                for (int i = 0; i < _tableItemNum; i++)
+                {
+                    // キーの型を取得
+                    _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x08, _intBytes, _intBytes.Length, out _readSize);
+                    if (!_ret) { return false; }
+                    _itemKeyType = BitConverter.ToInt32(_intBytes, 0) & 0x000FFFFF;
+
+                    // キーの文字列型のアイテムのみ処理
+                    if (_itemKeyType == 0x10)
+                    {
+                        // キー文字列のアドレス取得
+                        _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x0C, _ptrBytes, _intBytes.Length, out _readSize);
+                        if (!_ret) { return false; }
+                        _itemKeyPtr = PtrUtil.BytesToIntPtr(_ptrBytes);
+
+                        // キー文字列の長さ取得
+                        _ret = Kernel32.ReadProcessMemory(_process.Handle, _itemKeyPtr + 0x14, _intBytes, _intBytes.Length, out _readSize);
+                        if (!_ret) { return false; }
+                        _itemKeyLen = BitConverter.ToInt32(_intBytes, 0);
+
+                        // キー文字列を取得
+                        Byte[] _keyBytes = new Byte[_itemKeyLen];
+                        _ret = Kernel32.ReadProcessMemory(_process.Handle, _itemKeyPtr + 0x1C, _keyBytes, _keyBytes.Length, out _readSize);
+                        if (!_ret) { return false; }
+                        _itemKey = System.Text.Encoding.ASCII.GetString(_keyBytes);
+
+                        // キー文字列が、ゲームシーン情報に関わるものであったら、値を取得
+                        foreach (String targetKey in targetKeys)
+                        {
+                            if (_itemKey == targetKey)
+                            {
+                                // 値の型を取得
+                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x00, _intBytes, _keyBytes.Length, out _readSize);
+                                if (!_ret) { return false; }
+                                _itemValType = BitConverter.ToInt32(_intBytes, 0);
+
+                                // 値を取得
+                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x04, _intBytes, _keyBytes.Length, out _readSize);
+                                if (!_ret) { return false; }
+                                _itemValVal = BitConverter.ToInt32(_intBytes, 0);
+
+                                // 結果をシーンパラメータ情報へと格納
+                                Dictionary<String,int> item = new Dictionary<string,int>();
+                                item.Add("type", _itemValType);
+                                item.Add("val" , _itemValVal);
+                                _sceneParams.Add(targetKey, item);
+                            }
+                        }
+
+                    }
+                }
+                
+                return IsFightingScene(_sceneParams);
             }
             catch (InvalidOperationException) { return false; }
             catch (NotSupportedException) { return false; }
@@ -158,17 +255,20 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
         /// <summary>
         /// 対戦中のあたいかどうか
         /// </summary>
-        /// <param name="sceneId"></param>
+        /// <param name="sceneParams"></param>
         /// <returns>true:対戦中 / false:対戦中じゃない</returns>
-        private bool IsFightingScene(byte sceneId)
+        private bool IsFightingScene(Dictionary<String, Dictionary<String, int>> sceneParams)
         {
-            if (FightingValues == null)
+            if (sceneParams == null)
                 return false;
 
-            foreach (var fightingValue in FightingValues)
+            if (
+                ((sceneParams["network_inst"]["type"] & 0x8000) != 0) &&
+                ((sceneParams["network_is_watch"]["type"] & 0x8) != 0) &&
+                (sceneParams["network_is_watch"]["val"] == 0)
+               )
             {
-                if (sceneId == fightingValue)
-                    return true;
+                return true;
             }
 
             return false;

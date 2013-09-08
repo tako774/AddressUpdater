@@ -41,16 +41,14 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Watcher
             _watchTimer.Tick += new EventHandler(_watchTimer_Tick);
 
             GameInformations = new Collection<GameInformation>();
-            GameInformations.Add(new GameInformation(
-                "東方非想天則 ～ 超弩級ギニョルの謎を追え Ver1.01",
-                "th123_101",
-                "0x008665C0",
-                new byte[] { 8, 9, 10, 11, 13, 14 }));
-            GameInformations.Add(new GameInformation(
-                "東方緋想天 Ver1.06",
-                "th105_106",
-                "0x006ECE78",
-                new byte[] { 8, 9, 10, 11, 13, 14 }));
+            GameInformations.Add(
+                new GameInformation(
+                    "東方心綺楼 Ver1.21",
+                    "th135",
+                    "0x004d8348",
+                    new byte[] { }
+                )
+            );
         }
         #endregion
 
