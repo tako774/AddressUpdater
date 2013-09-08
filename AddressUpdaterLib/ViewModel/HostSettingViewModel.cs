@@ -908,7 +908,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// </summary>
         public void SendRecords2()
         {
-            try { Process.Start(new ProcessStartInfo("tsk_report") { WorkingDirectory = TencoFolder2 }); }
+            try { Process.Start(new ProcessStartInfo("skr_report") { WorkingDirectory = TencoFolder2 }); }
             catch (Exception ex) { Debug.WriteLine(ex.Message); }
         }
         #endregion
