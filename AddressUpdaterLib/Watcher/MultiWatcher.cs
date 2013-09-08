@@ -33,6 +33,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Watcher
         #region 初期化
         /// <summary>
         /// インスタンスの生成
+        /// ゲーム情報は、サーバー側の設定を読み込む
         /// </summary>
         public MultiWatcher()
         {
@@ -41,14 +42,6 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Watcher
             _watchTimer.Tick += new EventHandler(_watchTimer_Tick);
 
             GameInformations = new Collection<GameInformation>();
-            GameInformations.Add(
-                new GameInformation(
-                    "東方心綺楼 Ver1.21",
-                    "th135",
-                    "0x004d8348",
-                    new byte[] { }
-                )
-            );
         }
         #endregion
 
