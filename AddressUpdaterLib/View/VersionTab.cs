@@ -106,7 +106,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.View
         {
             UserConfig.ExtraWindowInformations.Add(new ExtraWindowInformation()
             {
-                Caption = "東方非想天則 ～ 超弩級ギニョルの謎を追え Ver1.03"
+                Caption = "東方心綺楼 Ver.1.21"
             });
             SetExtraTabPages();
             tabControl1.SelectedIndex = tabControl1.TabCount - 2;
