@@ -407,7 +407,7 @@ namespace HisoutenSupportTools.AddressUpdater
             try
             {
                 Process tsk;
-                var processes = Process.GetProcessesByName("tsk");
+                var processes = Process.GetProcessesByName("Solfisk");
                 if (processes.Length == 0)
                 {
                     _tskStatus.Status = false;
