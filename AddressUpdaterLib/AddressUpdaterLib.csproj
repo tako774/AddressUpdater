@@ -121,7 +121,6 @@
     <Compile Include="Model\Config\NullColorData.cs" />
     <Compile Include="Model\Config\ExtraWindowInformation.cs" />
     <Compile Include="Tenco\Games.cs" />
-    <Compile Include="Tenco\SwrAddr.cs" />
     <Compile Include="Controller\HostController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -184,7 +183,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Tenco\Th135Characters.cs" />
-    <Compile Include="Tenco\SwrsAddr.cs" />
     <Compile Include="Tenco\Th135Rating.cs" />
     <Compile Include="Tenco\Th135TencoClient.cs" />
     <Compile Include="Util\ArrayExtention.cs" />
