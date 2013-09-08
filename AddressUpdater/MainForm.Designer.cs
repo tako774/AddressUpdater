@@ -34,7 +34,7 @@
             this.hostSettingTabPage = new System.Windows.Forms.TabPage();
             this.userConfigTabPage = new System.Windows.Forms.TabPage();
             this.versionTabPage = new System.Windows.Forms.TabPage();
-            this.tskTimer = new System.Windows.Forms.Timer(this.components);
+            this.trackerTimer = new System.Windows.Forms.Timer(this.components);
             this.hostSettingTab = new HisoutenSupportTools.AddressUpdater.Lib.View.HostSettingTab();
             this.hostSettingViewModel = new HisoutenSupportTools.AddressUpdater.Lib.ViewModel.HostSettingViewModel(this.components);
             this.userConfigTab = new HisoutenSupportTools.AddressUpdater.View.UserConfigTab();
@@ -89,11 +89,11 @@
             this.versionTabPage.Text = "バージョン情報";
             this.versionTabPage.UseVisualStyleBackColor = true;
             // 
-            // tskTimer
+            // trackerTimer
             // 
-            this.tskTimer.Enabled = true;
-            this.tskTimer.Interval = 5000;
-            this.tskTimer.Tick += new System.EventHandler(this.tskTimer_Tick);
+            this.trackerTimer.Enabled = true;
+            this.trackerTimer.Interval = 5000;
+            this.trackerTimer.Tick += new System.EventHandler(this.trackerTimerTick);
             // 
             // hostSettingTab
             // 
@@ -171,6 +171,6 @@
         private HisoutenSupportTools.AddressUpdater.Lib.View.VersionTab versionTab;
         private HisoutenSupportTools.AddressUpdater.Lib.ViewModel.HostSettingViewModel hostSettingViewModel;
         private HisoutenSupportTools.AddressUpdater.Lib.ViewModel.VersionViewModel versionViewModel;
-        private System.Windows.Forms.Timer tskTimer;
+        private System.Windows.Forms.Timer trackerTimer;
     }
 }

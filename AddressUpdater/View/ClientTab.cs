@@ -70,25 +70,25 @@ namespace HisoutenSupportTools.AddressUpdater.View
         /// <summary>
         /// 対戦記録ツールの状態
         /// </summary>
-        public TskStatus TskStatus
+        public TrackerStatus TrackerStatus
         {
-            get { return _tskStatus; }
+            get { return _trackerStatus; }
             set
             {
-                if (_tskStatus == value)
+                if (_trackerStatus == value)
                     return;
 
                 if (value != null)
                 {
-                    _tskStatus = value;
-                    _tskStatus.StatusChanged += new EventHandler<EventArgs<bool>>(_tskStatus_StatusChanged);
+                    _trackerStatus = value;
+                    _trackerStatus.StatusChanged += new EventHandler<EventArgs<bool>>(_trackerStatus_StatusChanged);
                 }
             }
         }
-        private TskStatus _tskStatus;
+        private TrackerStatus _trackerStatus;
 
         private bool _enableAutoMatching = false;
-        void _tskStatus_StatusChanged(object sender, EventArgs<bool> e)
+        void _trackerStatus_StatusChanged(object sender, EventArgs<bool> e)
         {
             if (_enableAutoMatching)
             {
@@ -332,8 +332,8 @@ namespace HisoutenSupportTools.AddressUpdater.View
             _client.ConsecutiveErrorHappened -= _client_ConsecutiveErrorHappened;
             _client.Dispose();
 
-            if (_tskStatus != null)
-                _tskStatus.StatusChanged -= new EventHandler<EventArgs<bool>>(_tskStatus_StatusChanged);
+            if (_trackerStatus != null)
+                _trackerStatus.StatusChanged -= new EventHandler<EventArgs<bool>>(_trackerStatus_StatusChanged);
 
             receiveTimer.Enabled = false;
             receiveTimer.Stop();

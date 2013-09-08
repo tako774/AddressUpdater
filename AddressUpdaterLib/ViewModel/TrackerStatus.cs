@@ -5,7 +5,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
     /// <summary>
     /// 対戦記録ツールの状態
     /// </summary>
-    public class TskStatus
+    public class TrackerStatus
     {
         private bool _status = false;
         /// <summary>
@@ -31,6 +31,6 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
         /// <summary>
         /// インスタンスの生成
         /// </summary>
-        public TskStatus() { }
+        public TrackerStatus() { }
     }
 }

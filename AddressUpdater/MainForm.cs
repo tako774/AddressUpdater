@@ -21,7 +21,7 @@ namespace HisoutenSupportTools.AddressUpdater
         /// <summary>終了処理中かどうか</summary>
         private bool _closing = false;
         /// <summary>対戦記録ツールの状態</summary>
-        private TskStatus _tskStatus = new TskStatus();
+        private TrackerStatus _trackerStatus = new TrackerStatus();
 
         /// <summary>
         /// インスタンスの生成
@@ -276,7 +276,7 @@ namespace HisoutenSupportTools.AddressUpdater
                 clientTab.VersionViewModel = versionViewModel;
                 clientTab.UserConfig = Program.USER_CONFIG;
                 clientTab.Language = Program.LANGUAGE;
-                clientTab.TskStatus = _tskStatus;
+                clientTab.TrackerStatus = _trackerStatus;
                 clientTab.Client = client;
                 clientTab.Theme = Program.THEME;
                 InsertTab(0, clientTab);
@@ -402,32 +402,32 @@ namespace HisoutenSupportTools.AddressUpdater
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void tskTimer_Tick(object sender, EventArgs e)
+        private void trackerTimerTick(object sender, EventArgs e)
         {
             try
             {
-                Process tsk;
+                Process tracker;
                 var processes = Process.GetProcessesByName("Solfisk");
                 if (processes.Length == 0)
                 {
-                    _tskStatus.Status = false;
+                    _trackerStatus.Status = false;
                     return;
                 }
-                tsk = processes[0];
+                tracker = processes[0];
 
-                if (!tsk.Responding)
+                if (!tracker.Responding)
                 {
-                    _tskStatus.Status = false;
-                    tsk = null;
+                    _trackerStatus.Status = false;
+                    tracker = null;
                     return;
                 }
 
-                _tskStatus.Status = true;
+                _trackerStatus.Status = true;
             }
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
-                _tskStatus.Status = false;
+                _trackerStatus.Status = false;
             }
         }
     }

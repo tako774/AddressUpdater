@@ -221,7 +221,7 @@
       <DependentUpon>HostSettingViewModel.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\MatchingPhase.cs" />
-    <Compile Include="ViewModel\TskStatus.cs" />
+    <Compile Include="ViewModel\TrackerStatus.cs" />
     <Compile Include="ViewModel\VersionViewModel.cs">
       <SubType>Component</SubType>
     </Compile>
