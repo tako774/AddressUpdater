@@ -70,7 +70,6 @@
             this.textChangeToggle3 = new HisoutenSupportTools.AddressUpdater.Lib.View.TextChangeToggle(this.components);
             this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.hostController = new HisoutenSupportTools.AddressUpdater.Lib.Controller.HostController(this.components);
-            this.th105Watcher = new HisoutenSupportTools.AddressUpdater.Lib.Watcher.Th105Watcher(this.components);
             this.addressTxtUpdater = new HisoutenSupportTools.AddressUpdater.Lib.IO.AddressTxtUpdater(this.components);
             this.receiveTimer = new System.Windows.Forms.Timer(this.components);
             this.colorChangeToggle4 = new HisoutenSupportTools.AddressUpdater.Lib.View.ColorChangeToggle(this.components);
@@ -521,17 +520,6 @@
             // 
             this.hostController.Client = null;
             this.hostController.Interval = 15000;
-            this.hostController.Watcher = this.th105Watcher;
-            // 
-            // th105Watcher
-            // 
-            this.th105Watcher.FightingScenes = new byte[] {
-        ((byte)(8)),
-        ((byte)(9)),
-        ((byte)(10)),
-        ((byte)(11)),
-        ((byte)(13)),
-        ((byte)(14))};
             // 
             // receiveTimer
             // 
@@ -618,7 +606,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem 大会に参加ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
-        private HisoutenSupportTools.AddressUpdater.Lib.Watcher.Th105Watcher th105Watcher;
         private HisoutenSupportTools.AddressUpdater.Lib.ViewModel.ChatViewModel chatViewModel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.CheckBox autoMatchingCheckBox;

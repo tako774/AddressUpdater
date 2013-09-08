@@ -456,8 +456,6 @@ namespace HisoutenSupportTools.AddressUpdater.View
             var setting = (serverSetting)e.Result;
             receiveChatCheckBox.Enabled = setting.enableChat;
             chatInput.MaxLength = setting.chatMaxLength;
-            th105Watcher.WindowCaption = setting.hisoutenWindowCaption;
-            th105Watcher.SceneIdAddress = setting.hisoutenSceneIdAddress;
             if (setting.hisoutenFightingScenes != null)
             {
                 var values = new List<byte>();
@@ -467,7 +465,6 @@ namespace HisoutenSupportTools.AddressUpdater.View
                     try { values.Add(byte.Parse(valueString)); }
                     catch (Exception) { continue; }
                 }
-                th105Watcher.FightingScenes = values.ToArray();
             }
 
             _enableAutoMatching = setting.enableAutoMatching;
