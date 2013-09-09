@@ -117,9 +117,9 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
                 int _itemValType;
                 int _itemValVal;
                 
-                Dictionary<String, Dictionary<String, int>> _sceneParams = new Dictionary<string,Dictionary<string,int>>();
                 String[] targetKeys = new String[] {"game", "network_inst", "network_is_watch"};
-
+                Dictionary<String, Dictionary<String, int>> _sceneParams = new Dictionary<string, Dictionary<string, int>>(targetKeys.Length);
+                
                 // メインモジュールのベースアドレス取得
                 IntPtr _mainModulePtr = _process.MainModule.BaseAddress;
 
@@ -155,7 +155,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
                     if (_itemKeyType == 0x10)
                     {
                         // キー文字列のアドレス取得
-                        _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x0C, _ptrBytes, _intBytes.Length, out _readSize);
+                        _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x0C, _ptrBytes, _ptrBytes.Length, out _readSize);
                         if (!_ret) { return false; }
                         _itemKeyPtr = PtrUtil.BytesToIntPtr(_ptrBytes);
 
@@ -176,19 +176,19 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
                             if (_itemKey == targetKey)
                             {
                                 // 値の型を取得
-                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x00, _intBytes, _keyBytes.Length, out _readSize);
+                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x00, _intBytes, _intBytes.Length, out _readSize);
                                 if (!_ret) { return false; }
                                 _itemValType = BitConverter.ToInt32(_intBytes, 0);
 
                                 // 値を取得
-                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x04, _intBytes, _keyBytes.Length, out _readSize);
+                                _ret = Kernel32.ReadProcessMemory(_process.Handle, _tableItemsPointer + 0x14 * i + 0x04, _intBytes, _intBytes.Length, out _readSize);
                                 if (!_ret) { return false; }
                                 _itemValVal = BitConverter.ToInt32(_intBytes, 0);
 
                                 // 結果をシーンパラメータ情報へと格納
                                 Dictionary<String,int> item = new Dictionary<string,int>();
                                 item.Add("type", _itemValType);
-                                item.Add("val" , _itemValVal);
+                                item.Add("val", _itemValVal);
                                 _sceneParams.Add(targetKey, item);
                             }
                         }
@@ -262,14 +262,22 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Model
             if (sceneParams == null)
                 return false;
 
-            if (
-                ((sceneParams["network_inst"]["type"] & 0x8000) != 0) &&
-                ((sceneParams["network_is_watch"]["type"] & 0x8) != 0) &&
-                (sceneParams["network_is_watch"]["val"] == 0)
-               )
+             try
             {
-                return true;
+                if (
+                    ((sceneParams["network_inst"]["type"] & 0x8000) != 0) &&
+                    ((sceneParams["network_is_watch"]["type"] & 0x8) != 0) &&
+                    (sceneParams["network_is_watch"]["val"] == 0)
+                   )
+                {
+                    return true;
+                }
             }
+            catch (KeyNotFoundException)
+            {
+                return false;
+            }
+
 
             return false;
         }
