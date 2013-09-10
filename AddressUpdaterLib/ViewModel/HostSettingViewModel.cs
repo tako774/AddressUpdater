@@ -889,7 +889,7 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.ViewModel
 
             Process.Start(string.Format(
                 "http://tenco.info/game/4/account/{0}/",
-                TencoAccountName));
+                TencoAccountName2));
         }
         #endregion
 
