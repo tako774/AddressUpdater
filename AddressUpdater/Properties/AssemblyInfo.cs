@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // アセンブリに関する一般情報は以下の属性セットをとおして制御されます。
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
-[assembly: AssemblyTitle("AddressUpdater")]
+[assembly: AssemblyTitle("AddressUpdaterSnkr")]
 [assembly: AssemblyDescription("ネット対戦支援ツールです。")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AddressUpdater")]
+[assembly: AssemblyProduct("AddressUpdaterSnkr")]
 [assembly: AssemblyCopyright("Copyright © bngper 2008-2009")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("8.12.135.*")]
+[assembly: AssemblyVersion("8.13.135.2")]
 //[assembly: AssemblyFileVersion("4.6.0.0")]

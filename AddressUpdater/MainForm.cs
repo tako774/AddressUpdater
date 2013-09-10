@@ -55,7 +55,7 @@ namespace HisoutenSupportTools.AddressUpdater
             _isLoading = true;
             try
             {
-                Text = Application.ProductName;
+                Text = String.Format("{0} {1}", Application.ProductName, Application.ProductVersion);
 
                 ReflectWindowConfig();
                 ReflectLanguage();
