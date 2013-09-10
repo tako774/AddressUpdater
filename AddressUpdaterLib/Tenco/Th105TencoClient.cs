@@ -47,7 +47,10 @@ namespace HisoutenSupportTools.AddressUpdater.Lib.Tenco
         public void UpdateRating()
         {
             var webClient = new WebClient();
+            var asbName = System.Reflection.Assembly.GetExecutingAssembly().GetName();
+
             webClient.Encoding = Encoding.UTF8;
+            webClient.Headers.Add(HttpRequestHeader.UserAgent, String.Format("{0}/{1}", asbName.Name, asbName.Version));
             try
             {
                 var mypageXml = webClient.DownloadString(_mypage);
